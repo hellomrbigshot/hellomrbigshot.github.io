@@ -59,9 +59,9 @@
 <meta property="og:site_name" content="My Blog">
 <meta property="og:description" content="看了网上很多资料，以前对JS原型链可能了解的不够深，这次也是专门加深了理解。
 一、proto和prototype的概念开始先明确两个概念，proto和prototype。proto是对象的内部原型，是浏览器给它的一个属性，不是js赋予的属性。而prototype是构造器的原型，是js赋予的属性。这里举个例子：12function fun()&amp;#123;&amp;#125;var theme=new fun">
-<meta property="og:image" content="http://s14.sinaimg.cn/mw690/002ZrkKJgy6XGFsvseNad&690">
-<meta property="og:image" content="http://s1.sinaimg.cn/mw690/002ZrkKJgy6XGFB6fsc10&690">
-<meta property="og:updated_time" content="2016-01-04T12:53:45.395Z">
+<meta property="og:image" content="http://yoursite.com/prototype1.png">
+<meta property="og:image" content="http://yoursite.com/prototype2.png">
+<meta property="og:updated_time" content="2016-01-04T14:30:48.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我对JS原型链的理解">
 <meta name="twitter:description" content="看了网上很多资料，以前对JS原型链可能了解的不够深，这次也是专门加深了理解。
@@ -328,10 +328,10 @@
 <p>我们用typeof obj.toString来判断对象的类型，用’z’ in obj来判断obj中是否有z，用hasOwnPrototype来判断z是不是这个对象本身的一员。那我们可以发现obj中有z属性但是z不是对象本身的属性而是从原型链上继承的。</p>
 <p>我们开始测试：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">obj.__proto__ === foo.prototype             <span class="comment">//true</span></span><br><span class="line">foo.prototype.__proto__ === <span class="built_in">Object</span>.prototype     <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.__proto__ === <span class="keyword">null</span>               <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
 <p>说明obj的<strong>proto</strong>指向foo构造器的prototype。,foo.prototype的<strong>proto</strong>指向了Object的prototype，最终Object.prototype.<strong>proto</strong>指向了null。这就是一条原型链，如下图。</p>
-<p><img src="http://s14.sinaimg.cn/mw690/002ZrkKJgy6XGFsvseNad&amp;690" alt=""></p>
+<p><img src="/prototype1.png" alt=""></p>
 <p>为了能更升入地理解<strong>proto</strong>在原型链中发挥的作用，我们再举一个例子：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> school = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> classroom = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">school.size = <span class="number">200</span>;</span><br><span class="line">classroom.prototype = school;</span><br><span class="line"><span class="keyword">var</span> student = <span class="keyword">new</span> classroom();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(classroom.size);            <span class="comment">//undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(student.size);                 <span class="comment">//200</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://s1.sinaimg.cn/mw690/002ZrkKJgy6XGFB6fsc10&amp;690" alt=""></p>
+<p><img src="/prototype2.png" alt=""></p>
 <p>我们可以看到student的<strong>proto</strong>指向classroom的prototype，所以student得<strong>proto</strong>指向school，所以student可以从原型链向上寻school中size的值。而classroom的prototype指向school并没有对它向上的原型链起效，所以我们可以得出一个结论：原型链形成的纽带是<strong>proto</strong>。</p>
 <p>接下来谈谈原型链的作用。我认为原型链最重要的作用还是实现了JS中的继承，至于其他的节省内存等感觉倒是可有可无。</p>
 </span>
