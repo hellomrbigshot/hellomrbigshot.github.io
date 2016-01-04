@@ -51,22 +51,41 @@
 
 
 
-<meta name="description" content="看了网上很多资料，以前对JS原型链可能了解的不够深，这次也是专门加深了理解。
-一、proto和prototype的概念开始先明确两个概念，proto和prototype。proto是对象的内部原型，是浏览器给它的一个属性，不是js赋予的属性。而prototype是构造器的原型，是js赋予的属性。这里举个例子：12function fun()&amp;#123;&amp;#125;var theme=new fun">
+<meta name="description" content="这是我在hexo上的第一篇博客哈哈。掐指算了算实习也一个多月了，在通过第一个月的考核之后这个月终于可以让我做一些和前端有关的知识了。感觉第一周还是学点AngularJS比较靠谱。在不上班的时间里忙里偷闲搭了这个博客哈哈，也是挺开心的。
+这是标题
+分类1
+分类2
+分类3
+
+先放一张孔布林的图！
+百度
+再放一张我姿的图">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js原型链的一些总结">
 <meta property="og:url" content="http://yoursite.com/2015/12/30/我的第一篇文章/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="看了网上很多资料，以前对JS原型链可能了解的不够深，这次也是专门加深了理解。
-一、proto和prototype的概念开始先明确两个概念，proto和prototype。proto是对象的内部原型，是浏览器给它的一个属性，不是js赋予的属性。而prototype是构造器的原型，是js赋予的属性。这里举个例子：12function fun()&amp;#123;&amp;#125;var theme=new fun">
-<meta property="og:image" content="http://s14.sinaimg.cn/mw690/002ZrkKJgy6XGFsvseNad&690">
-<meta property="og:image" content="http://s1.sinaimg.cn/mw690/002ZrkKJgy6XGFB6fsc10&690">
+<meta property="og:description" content="这是我在hexo上的第一篇博客哈哈。掐指算了算实习也一个多月了，在通过第一个月的考核之后这个月终于可以让我做一些和前端有关的知识了。感觉第一周还是学点AngularJS比较靠谱。在不上班的时间里忙里偷闲搭了这个博客哈哈，也是挺开心的。
+这是标题
+分类1
+分类2
+分类3
+
+先放一张孔布林的图！
+百度
+再放一张我姿的图">
 <meta property="og:image" content="https://g-search3.alicdn.com/img/bao/uploaded/i4/i2/T14fiWFA0bXXXXXXXX_!!0-item_pic.jpg_230x230.jpg_.webp">
-<meta property="og:updated_time" content="2016-01-04T12:47:42.026Z">
+<meta property="og:updated_time" content="2016-01-04T13:02:58.056Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js原型链的一些总结">
-<meta name="twitter:description" content="看了网上很多资料，以前对JS原型链可能了解的不够深，这次也是专门加深了理解。
-一、proto和prototype的概念开始先明确两个概念，proto和prototype。proto是对象的内部原型，是浏览器给它的一个属性，不是js赋予的属性。而prototype是构造器的原型，是js赋予的属性。这里举个例子：12function fun()&amp;#123;&amp;#125;var theme=new fun">
+<meta name="twitter:description" content="这是我在hexo上的第一篇博客哈哈。掐指算了算实习也一个多月了，在通过第一个月的考核之后这个月终于可以让我做一些和前端有关的知识了。感觉第一周还是学点AngularJS比较靠谱。在不上班的时间里忙里偷闲搭了这个博客哈哈，也是挺开心的。
+这是标题
+分类1
+分类2
+分类3
+
+先放一张孔布林的图！
+百度
+再放一张我姿的图">
 
 
 
@@ -316,27 +335,15 @@
       
 
       
-        <span itemprop="articleBody"><p>看了网上很多资料，以前对JS原型链可能了解的不够深，这次也是专门加深了理解。</p>
-<h2 id="u4E00_u3001proto_u548Cprototype_u7684_u6982_u5FF5"><a href="#u4E00_u3001proto_u548Cprototype_u7684_u6982_u5FF5" class="headerlink" title="一、proto和prototype的概念"></a>一、<strong>proto</strong>和prototype的概念</h2><p>开始先明确两个概念，<strong>proto</strong>和prototype。<strong>proto</strong>是对象的内部原型，是浏览器给它的一个属性，不是js赋予的属性。而prototype是构造器的原型，是js赋予的属性。这里举个例子：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function <span class="function"><span class="title">fun</span><span class="params">()</span>&#123;&#125;</span></span><br><span class="line"><span class="variable"><span class="keyword">var</span> theme</span>=new <span class="function"><span class="title">fun</span><span class="params">()</span>;</span></span><br></pre></td></tr></table></figure></p>
-<p>这里fun()是一个构造函数，也就是一个构造器。通过测试可以发现所有构造器/函数的<strong>proto</strong>都是指向Function.prototype，是一个空函数。也就是：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span>.__proto__ === Function.prototype    <span class="comment">//function Empty()&#123;&#125;</span></span></span><br></pre></td></tr></table></figure></p>
-<p>这可以说明fun构造器来自Function原型，也就是Function.prototype。<br>而theme就是我们构造的一个对象，也就是fun()的一个实体对象。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme.__proto__ === <span class="function"><span class="keyword">fun</span>.prototype            <span class="comment">//true</span></span></span><br></pre></td></tr></table></figure></p>
-<p>由于theme是一个对象而不是构造器，所以theme.prototype返回的是undefined。</p>
-<p>我们还发现：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype === <span class="built_in">Object</span>.__proto__            <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
-<p>说明所有的构造器都是对象，并且构造器都来自Function原型。普通对象没有prototype，只有<strong>proto</strong>属性。</p>
-<h2 id="u4E8C_u3001JS_u6784_u5EFA_u5BF9_u8C61_u548C_u539F_u578B_u94FE"><a href="#u4E8C_u3001JS_u6784_u5EFA_u5BF9_u8C61_u548C_u539F_u578B_u94FE" class="headerlink" title="二、JS构建对象和原型链"></a>二、JS构建对象和原型链</h2><p>对象中包含一系列属性，这些属性是无序的，每个属性都有一个特定字符串的key和value。如：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;x:<span class="number">1</span>,y:<span class="number">2</span>&#125;</span><br><span class="line">obj.x;       <span class="comment">//1</span></span><br><span class="line">obj.y;       <span class="comment">//2</span></span><br></pre></td></tr></table></figure></p>
-<p>作为key时，无论是数字还是对象，JS都会将它转换为字符串。</p>
-<p>下面我们用原型链的方法创建一个对象：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">foo.prototype.z = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> foo();</span><br><span class="line">obj.x = <span class="number">1</span>;</span><br><span class="line">obj.y = <span class="number">2</span>;</span><br><span class="line"> </span><br><span class="line">obj.x;                  <span class="comment">//1</span></span><br><span class="line">obj.y;                  <span class="comment">//2</span></span><br><span class="line">obj.z;                  <span class="comment">//3</span></span><br><span class="line"><span class="keyword">typeof</span> obj.toString;          <span class="comment">//’function’</span></span><br><span class="line"><span class="string">'z'</span> <span class="keyword">in</span> obj;           <span class="comment">//true</span></span><br><span class="line">Obj.hasOwnPrototype(‘z’);               <span class="comment">//false</span></span><br></pre></td></tr></table></figure></p>
-<p>我们用typeof obj.toString来判断对象的类型，用’z’ in obj来判断obj中是否有z，用hasOwnPrototype来判断z是不是这个对象本身的一员。那我们可以发现obj中有z属性但是z不是对象本身的属性而是从原型链上继承的。</p>
-<p>我们开始测试：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">obj.__proto__ === foo.prototype             <span class="comment">//true</span></span><br><span class="line">foo.prototype.__proto__ === <span class="built_in">Object</span>.prototype     <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.__proto__ === <span class="keyword">null</span>               <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
-<p>说明obj的<strong>proto</strong>指向foo构造器的prototype。,foo.prototype的<strong>proto</strong>指向了Object的prototype，最终Object.prototype.<strong>proto</strong>指向了null。这就是一条原型链，如下图。</p>
-<p><img src="http://s14.sinaimg.cn/mw690/002ZrkKJgy6XGFsvseNad&amp;690" alt=""></p>
-<p>为了能更升入地理解<strong>proto</strong>在原型链中发挥的作用，我们再举一个例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> school = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> classroom = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">school.size = <span class="number">200</span>;</span><br><span class="line">classroom.prototype = school;</span><br><span class="line"><span class="keyword">var</span> student = <span class="keyword">new</span> classroom();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(classroom.size);            <span class="comment">//undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(student.size);                 <span class="comment">//200</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://s1.sinaimg.cn/mw690/002ZrkKJgy6XGFB6fsc10&amp;690" alt=""></p>
-<p>我们可以看到student的<strong>proto</strong>指向classroom的prototype，所以student得<strong>proto</strong>指向school，所以student可以从原型链向上寻school中size的值。而classroom的prototype指向school并没有对它向上的原型链起效，所以我们可以得出一个结论：原型链形成的纽带是<strong>proto</strong>。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">alert</span><span class="params">(<span class="string">"hello world"</span>)</span></span></span><br></pre></td></tr></table></figure>
+        <span itemprop="articleBody"><p>这是我在hexo上的第一篇博客哈哈。<br>掐指算了算实习也一个多月了，在通过第一个月的考核之后这个月终于可以让我做一些和前端有关的知识了。感觉第一周还是学点AngularJS比较靠谱。<br>在不上班的时间里忙里偷闲搭了这个博客哈哈，也是挺开心的。</p>
+<h2 id="u8FD9_u662F_u6807_u9898"><a href="#u8FD9_u662F_u6807_u9898" class="headerlink" title="这是标题"></a>这是标题</h2><ul>
+<li>分类1</li>
+<li>分类2</li>
+<li>分类3</li>
+</ul>
+<h2 id="u5148_u653E_u4E00_u5F20_u5B54_u5E03_u6797_u7684_u56FE"><a href="#u5148_u653E_u4E00_u5F20_u5B54_u5E03_u6797_u7684_u56FE" class="headerlink" title="先放一张孔布林的图"></a>先放一张孔布林的图</h2><p>！<a href="http://d02.res.meilishuo.net/picdetail/a/d2/53/08ddc1b248cdb96050cab5a8294e_774_448_1_1.c5.jpeg" target="_blank" rel="external"></a></p>
 <p><a href="http://www.baidu.com" target="_blank" rel="external">百度</a></p>
-<p><img src="https://g-search3.alicdn.com/img/bao/uploaded/i4/i2/T14fiWFA0bXXXXXXXX_!!0-item_pic.jpg_230x230.jpg_.webp" alt=""></p>
+<h2 id="u518D_u653E_u4E00_u5F20_u6211_u59FF_u7684_u56FE"><a href="#u518D_u653E_u4E00_u5F20_u6211_u59FF_u7684_u56FE" class="headerlink" title="再放一张我姿的图"></a>再放一张我姿的图</h2><p><img src="https://g-search3.alicdn.com/img/bao/uploaded/i4/i2/T14fiWFA0bXXXXXXXX_!!0-item_pic.jpg_230x230.jpg_.webp" alt=""></p>
 </span>
       
     </div>
@@ -508,7 +515,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u4E00_u3001proto_u548Cprototype_u7684_u6982_u5FF5"><span class="nav-number">1.</span> <span class="nav-text">一、proto和prototype的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4E8C_u3001JS_u6784_u5EFA_u5BF9_u8C61_u548C_u539F_u578B_u94FE"><span class="nav-number">2.</span> <span class="nav-text">二、JS构建对象和原型链</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u8FD9_u662F_u6807_u9898"><span class="nav-number">1.</span> <span class="nav-text">这是标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5148_u653E_u4E00_u5F20_u5B54_u5E03_u6797_u7684_u56FE"><span class="nav-number">2.</span> <span class="nav-text">先放一张孔布林的图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u518D_u653E_u4E00_u5F20_u6211_u59FF_u7684_u56FE"><span class="nav-number">3.</span> <span class="nav-text">再放一张我姿的图</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
