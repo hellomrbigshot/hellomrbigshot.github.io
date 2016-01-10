@@ -251,6 +251,126 @@
             
               
                 
+                <a class="post-title-link" href="/2016/01/11/JS构造函数详解/" itemprop="url">
+                  JS构造函数详解
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-01-11T01:08:10+08:00" content="2016-01-11">
+              2016-01-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/11/JS构造函数详解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/11/JS构造函数详解/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>前几天学习了JS的闭包，当时为了更好地理解闭包也是专门深入学习了JS的构造函数的一些相关知识。</p>
+<p>从形式上看，一个函数被作为构造函数还是普通函数执行的唯一区别，是否用new运算符。</p>
+<p>通常来说，构造函数没有返回值，它们只是初始化this指针传递进来的对象，并且什么也不返回。如果一个函数有返回值，被返回的对象就成了new表达式的值。</p>
+<p>如果一个函数的返回值是引用类型（数组，对象或者函数）的数据，那么这个函数作为构造函数用new运算符执行构造时，运算的结果将被它的返回值取代，这时候，构造函数体内的this值丢失了，取而代之的是被返回的对象。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span></span>&#123; </span><br><span class="line"><span class="keyword">this</span>.a=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="keyword">var</span> m = <span class="keyword">new</span> foo();</span><br><span class="line">alert(m);    <span class="comment">//function()&#123;return 2&#125;</span></span><br><span class="line">alert(m());    <span class="comment">//2</span></span><br><span class="line">alert(m.a);    <span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> n = foo();</span><br><span class="line">alert(n);    <span class="comment">//function()&#123;return 2&#125;</span></span><br><span class="line">alert(n());   <span class="comment">//2</span></span><br><span class="line">alert(n.a);    <span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+<p>如果一个函数的返回值是一个值类型，那么这个函数作为构造函数用new运算符执行构造时，它的返回值将被丢弃。new 表达式的结果仍然是this所引用的对象。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fee</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">this</span>.a=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> e = <span class="keyword">new</span> fee();</span><br><span class="line"><span class="keyword">var</span> f = fee();</span><br><span class="line">alert(e);     <span class="comment">//object</span></span><br><span class="line">alert(e.a);   <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line">alert(f);    <span class="comment">//2</span></span><br><span class="line">alert(f.a);   <span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/01/04/我对JS原型链的理解/" itemprop="url">
                   我对JS原型链的理解
                 </a>
@@ -844,14 +964,14 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
