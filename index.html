@@ -228,6 +228,174 @@
 
     
     
+      
+      
+        
+        
+        
+      
+
+      
+    
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/16/Markdown一些基本语法/" itemprop="url">
+                  Markdown一些基本语法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-01-16T00:04:10+08:00" content="2016-01-16">
+              2016-01-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/16/Markdown一些基本语法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/16/Markdown一些基本语法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>用hexo写博客时用的都是用Markdown布置的。今晚有空总结下查到的一些Markdown基本语法，省的以后要用的时候忘了。</p>
+<p>首先是标题，最简单的设置标题的方式是在标题的前面加#，加几个算几级标题，比如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#标题<span class="number">1</span></span></span><br><span class="line"><span class="preprocessor">##标题<span class="number">2</span></span></span><br><span class="line"><span class="preprocessor">###标题<span class="number">3</span></span></span><br><span class="line">……</span><br></pre></td></tr></table></figure>
+<p>对应的标题是：</p>
+<h1 id="u6807_u98981"><a href="#u6807_u98981" class="headerlink" title="标题1"></a>标题1</h1><h2 id="u6807_u98982"><a href="#u6807_u98982" class="headerlink" title="标题2"></a>标题2</h2><h3 id="u6807_u98983"><a href="#u6807_u98983" class="headerlink" title="标题3"></a>标题3</h3><p>还有一种是在标题下面加”=”和”-“来表示一级标题和二级标题。</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">标题1</span><br><span class="line">===</span></span><br><span class="line"></span><br><span class="line"><span class="header">标题2</span><br><span class="line">---</span></span><br></pre></td></tr></table></figure>
+<p>表现为：</p>
+<h1 id="u5927_u6807_u9898"><a href="#u5927_u6807_u9898" class="headerlink" title="大标题"></a>大标题</h1><h2 id="u5C0F_u6807_u9898"><a href="#u5C0F_u6807_u9898" class="headerlink" title="小标题"></a>小标题</h2><p>文字的斜体可以用”<em>“或者”_”夹起来<br>文字的粗体可以用”*</em>“或者”__”夹起来</p>
+<pre><code>**这是粗体**
+_这是斜体_
+</code></pre><p>表现为：</p>
+<p><strong>这是粗体</strong><br><em>这是斜体</em></p>
+<p>无序列表<br>在文字开头加上”+”,”-“,”*”可以实现无序列表。</p>
+<pre><code>+ 列表1
+ - 列表2
+ * 列表3
+</code></pre><p>表现为：</p>
+<ul>
+<li>列表1</li>
+</ul>
+<ul>
+<li>列表2</li>
+</ul>
+<ul>
+<li>列表3<br>切记在符号和文字间加上一个空格，否则不能实现无序列表</li>
+</ul>
+<p>有序列表<br>在文字开头加上数字即可，同样要有空格。</p>
+<pre><code>1. 有序列表1
+2. 有序列表2
+3. 有序列表3
+</code></pre><p>表现为：</p>
+<ol>
+<li>有序列表1</li>
+<li>有序列表2</li>
+<li>有序列表3</li>
+</ol>
+<p>下划线<br>在空白行下面添加三条”-“</p>
+<pre><code>---
+</code></pre><p>表现为：</p>
+<hr>
+<p>图片和链接<br>图片和链接的引入方式十分相似</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">图片：![<span class="link_label">孔孝真</span>](<span class="link_url">http://d04.res.meilishuo.net/pic/_o/0d/f4/c3f3eb376d5864b67827d4f0cb12_800_800.c6.jpg "孔布林"</span>)</span><br><span class="line">链接：[<span class="link_label">我的github</span>][<span class="link_reference">https://github.com/hellomrbigshot "my github"</span>]</span><br></pre></td></tr></table></figure>
+<p><img src="http://d04.res.meilishuo.net/pic/_o/0d/f4/c3f3eb376d5864b67827d4f0cb12_800_800.c6.jpg" alt="孔孝真" title="孔布林"><br><a href="https://github.com/hellomrbigshot" title="my github" target="_blank" rel="external">我的github</a></p>
+<hr>
+<p>今天就这样吧要睡觉啦！Good night!</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
 
     
       
@@ -703,129 +871,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/12/30/我的第一篇文章/" itemprop="url">
-                  我的第一篇文章
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-12-30T00:03:22+08:00" content="2015-12-30">
-              2015-12-30
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/技术/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/12/30/我的第一篇文章/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/30/我的第一篇文章/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>这是我在hexo上的第一篇博客哈哈。<br>掐指算了算实习也一个多月了，在通过第一个月的考核之后这个月终于可以让我做一些和前端有关的知识了。感觉第一周还是学点AngularJS比较靠谱。<br>在不上班的时间里忙里偷闲搭了这个博客哈哈，也是挺开心的。</p>
-<h2 id="u8FD9_u662F_u6807_u9898"><a href="#u8FD9_u662F_u6807_u9898" class="headerlink" title="这是标题"></a>这是标题</h2><ul>
-<li>分类1</li>
-<li>分类2</li>
-<li>分类3</li>
-</ul>
-<h2 id="u5148_u653E_u4E00_u5F20_u5B54_u5E03_u6797_u7684_u56FE"><a href="#u5148_u653E_u4E00_u5F20_u5B54_u5E03_u6797_u7684_u56FE" class="headerlink" title="先放一张孔布林的图"></a>先放一张孔布林的图</h2><p><img src="http://d02.res.meilishuo.net/picdetail/a/d2/53/08ddc1b248cdb96050cab5a8294e_774_448_1_1.c5.jpeg" alt=""></p>
-<p><a href="http://www.baidu.com" target="_blank" rel="external">百度</a></p>
-<h2 id="u518D_u653E_u4E00_u5F20_u6211_u59FF_u7684_u56FE"><a href="#u518D_u653E_u4E00_u5F20_u6211_u59FF_u7684_u56FE" class="headerlink" title="再放一张我姿的图"></a>再放一张我姿的图</h2><p><img src="https://g-search3.alicdn.com/img/bao/uploaded/i4/i2/T14fiWFA0bXXXXXXXX_!!0-item_pic.jpg_230x230.jpg_.webp" alt=""></p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -872,21 +917,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">标签</span>
               
           </div>
