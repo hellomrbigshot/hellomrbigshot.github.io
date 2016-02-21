@@ -228,6 +228,135 @@
 
     
     
+      
+      
+        
+        
+        
+      
+
+      
+    
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/21/AngularJS学习笔记之依赖注入/" itemprop="url">
+                  AngularJS学习笔记之依赖注入
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-02-21T22:40:50+08:00" content="2016-02-21">
+              2016-02-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/21/AngularJS学习笔记之依赖注入/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/21/AngularJS学习笔记之依赖注入/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>&#x5B9E;&#x4E60;&#x7684;&#x65F6;&#x5019;&#x7528;AngularJS&#x6BD4;&#x8F83;&#x591A;&#xFF0C;&#x5199;&#x4E00;&#x7BC7;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;&#x7528;&#x6765;&#x8BB0;&#x5F55;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;&#x3002;<br>ng&#x4E2D;&#x7684;&#x201C;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x201D;&#x662F;&#x901A;&#x8FC7;provider&#x548C;injector&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<h3 id="u6CE8_u5165_u65B9_u5F0F_uFF1A"><a href="#u6CE8_u5165_u65B9_u5F0F_uFF1A" class="headerlink" title="&#x6CE8;&#x5165;&#x65B9;&#x5F0F;&#xFF1A;"></a>&#x6CE8;&#x5165;&#x65B9;&#x5F0F;&#xFF1A;</h3><h5 id="1_u3001_u63A8_u65AD_u578B_u6CE8_u5165_uFF1A_u51FD_u6570_u53C2_u6570_u7684_u540D_u79F0_u5FC5_u987B_u8981_u548C_u88AB_u6CE8_u5165_u7684_u5BF9_u8C61_u76F8_u540C"><a href="#1_u3001_u63A8_u65AD_u578B_u6CE8_u5165_uFF1A_u51FD_u6570_u53C2_u6570_u7684_u540D_u79F0_u5FC5_u987B_u8981_u548C_u88AB_u6CE8_u5165_u7684_u5BF9_u8C61_u76F8_u540C" class="headerlink" title="1&#x3001;&#x63A8;&#x65AD;&#x578B;&#x6CE8;&#x5165;&#xFF1A;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x7684;&#x540D;&#x79F0;&#x5FC5;&#x987B;&#x8981;&#x548C;&#x88AB;&#x6CE8;&#x5165;&#x7684;&#x5BF9;&#x8C61;&#x76F8;&#x540C;"></a>1&#x3001;&#x63A8;&#x65AD;&#x578B;&#x6CE8;&#x5165;&#xFF1A;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x7684;&#x540D;&#x79F0;&#x5FC5;&#x987B;&#x8981;&#x548C;&#x88AB;&#x6CE8;&#x5165;&#x7684;&#x5BF9;&#x8C61;&#x76F8;&#x540C;</h5><p>&#x4F8B;&#x5B50;&#xFF1A;</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var myModule = angular.module(<span class="string">&apos;MyModule&apos;</span>,[]);</span><br><span class="line">var MyCtrl = <span class="keyword">function</span>(<span class="variable">$scope</span>){</span><br><span class="line">	<span class="variable">$scope</span>.name = <span class="string">&apos;hello world&apos;</span>;</span><br><span class="line">}</span><br><span class="line">myModule.controller(<span class="string">&apos;MyCtrl&apos;</span>,MyCtrl);</span><br></pre></td></tr></table></figure>
+<p>AngularJS&#x6839;&#x636E;&#x51FD;&#x6570;&#x7684;&#x7B7E;&#x540D;&#xFF0C;&#x4ECE;&#x4E2D;&#x627E;&#x5230;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5F53;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x65F6;&#x5019;&#x628A;&#x53C2;&#x6570;&#x6CE8;&#x5165;&#x3002;<br>&#x6CE8;&#x610F;&#x70B9;&#xFF1A;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x540D;&#x79F0;&#x5FC5;&#x987B;&#x8981;&#x548C;&#x88AB;&#x6CE8;&#x5165;&#x7684;&#x5BF9;&#x8C61;&#x76F8;&#x540C;&#x3002;<br>&#x5F53;js&#x538B;&#x7F29;&#x65F6;&#x4F1A;&#x51FA;&#x9519;&#x3002;</p>
+<h5 id="2_u3001_u58F0_u660E_u5F0F_u6CE8_u5165_uFF1A"><a href="#2_u3001_u58F0_u660E_u5F0F_u6CE8_u5165_uFF1A" class="headerlink" title="2&#x3001;&#x58F0;&#x660E;&#x5F0F;&#x6CE8;&#x5165;&#xFF1A;"></a>2&#x3001;&#x58F0;&#x660E;&#x5F0F;&#x6CE8;&#x5165;&#xFF1A;</h5><p>&#x4F8B;&#x5B50;&#xFF1A;</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var myModule = angular.module(<span class="string">&apos;MyModule&apos;</span>,[]);</span><br><span class="line">var MyCtrl = <span class="keyword">function</span>(myName){</span><br><span class="line">	myName.name = <span class="string">&apos;hello world&apos;</span>;</span><br><span class="line">}</span><br><span class="line">MyCtrl.<span class="variable">$inject</span> = [<span class="string">&apos;$scope&apos;</span>];</span><br><span class="line">myModule.controller(<span class="string">&apos;MyCtrl&apos;</span>,MyCtrl);</span><br></pre></td></tr></table></figure>
+<h5 id="3_u3001_u5185_u8054_u5F0F_u6CE8_u5165"><a href="#3_u3001_u5185_u8054_u5F0F_u6CE8_u5165" class="headerlink" title="3&#x3001;&#x5185;&#x8054;&#x5F0F;&#x6CE8;&#x5165;"></a>3&#x3001;&#x5185;&#x8054;&#x5F0F;&#x6CE8;&#x5165;</h5><p>&#x4F8B;&#x5B50;&#xFF1A;</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var myModule = angular.module(<span class="string">&apos;MyModule&apos;</span>,[]);</span><br><span class="line">myModule.controller(<span class="string">&apos;MyCtrl&apos;</span>,[<span class="string">&apos;$scope&apos;</span>,<span class="keyword">function</span>(<span class="variable">$scope</span>){</span><br><span class="line">	<span class="variable">$scope</span>.name = <span class="string">&apos;hello world&apos;</span>;</span><br><span class="line">}])</span><br></pre></td></tr></table></figure>
+<p>&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x5185;&#x8054;&#x5F0F;&#x6CE8;&#x5165;&#xFF0C;&#x4E0D;&#x7528;&#x62C5;&#x5FC3;js&#x4EE3;&#x7801;&#x538B;&#x7F29;&#x51FA;&#x95EE;&#x9898;&#x3002;</p>
+<h5 id="u5176_u4ED6_u51E0_u4E2A_u4F8B_u5B50_uFF1A"><a href="#u5176_u4ED6_u51E0_u4E2A_u4F8B_u5B50_uFF1A" class="headerlink" title="&#x5176;&#x4ED6;&#x51E0;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;"></a>&#x5176;&#x4ED6;&#x51E0;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</h5><p>&#x4F8B;&#x5B50;&#xFF1A;</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var myModule = angular.module(<span class="string">&apos;MyModule&apos;</span>,[]);</span><br><span class="line">myModule.factory(<span class="string">&apos;game&apos;</span>,<span class="keyword">function</span>(){</span><br><span class="line">	return {</span><br><span class="line">	name: <span class="string">&apos;hello world&apos;</span>;</span><br><span class="line">}</span><br><span class="line">});</span><br><span class="line">myModule.controller(<span class="string">&apos;MyCtrl&apos;</span>,[<span class="string">&apos;$scope&apos;</span>,<span class="string">&apos;$injector&apos;</span>,<span class="keyword">function</span>(<span class="variable">$scope</span>,<span class="variable">$injector</span>){</span><br><span class="line">	<span class="variable">$injector</span>.invoke(function(game){</span><br><span class="line">		console.log(game.name);</span><br><span class="line">	})</span><br><span class="line">}])</span><br></pre></td></tr></table></figure>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;MyCtrl&#x4F9D;&#x8D56;&#x4E8E;&#x670D;&#x52A1;person,&#x4F46;&#x662F;&#x5B83;&#x4E0D;&#x58F0;&#x660E;&#x4F9D;&#x8D56;&#x4E8E;person,&#x800C;&#x662F;&#x901A;&#x8FC7;&#x6CE8;&#x5165;&#x5668;$injector&#x6765;&#x83B7;&#x5F97;person&#x7684;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x3002;&#x901A;&#x8FC7;&#x6CE8;&#x5165;&#x5668;$injector&#x7684;invoke&#x65B9;&#x6CD5;&#xFF0C;&#x628A;&#x670D;&#x52A1;person&#x7684;&#x5B9E;&#x4F8B;&#x6CE8;&#x5165;&#x5230;&#x51FD;&#x6570;&#x7684;funtion&#x4E2D;&#x3002;</p>
+<p>&#x5728;ng&#x4E2D;&#xFF0C;&#x6240;&#x6709;&#x7684;provider&#x90FD;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x8FDB;&#x884C;&#x6CE8;&#x5165;&#xFF1A;<br>provider/factory/service/constant/value</p>
+<p>&#x4EE5;&#x4E0B;&#x7C7B;&#x578B;&#x7684;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x6CE8;&#x5165;&#xFF1A;<br>controller/directive/filter/service/factory&#x7B49;</p>
+<h6 id="provide_u7684_u5199_u6CD5_uFF1A"><a href="#provide_u7684_u5199_u6CD5_uFF1A" class="headerlink" title="provide&#x7684;&#x5199;&#x6CD5;&#xFF1A;"></a>provide&#x7684;&#x5199;&#x6CD5;&#xFF1A;</h6><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var myModule = angular.module(<span class="string">&apos;MyModule&apos;</span>,[]);</span><br><span class="line">myModule.provider(<span class="string">&apos;HelloAngular&apos;</span>,<span class="keyword">function</span>(){</span><br><span class="line">	return {</span><br><span class="line">		<span class="variable">$get</span>: function(){</span><br><span class="line">			var name = <span class="string">&apos;hello world&apos;</span>;</span><br><span class="line">			function getName(){</span><br><span class="line">				return name;</span><br><span class="line">		}</span><br><span class="line">			return{</span><br><span class="line">				getName: getName</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">}</span><br><span class="line">});</span><br><span class="line">myModule.controller(<span class="string">&apos;MyCtrl&apos;</span>,[<span class="string">&apos;$scope&apos;</span>,<span class="string">&apos;HelloAngular&apos;</span>,</span><br><span class="line">	<span class="keyword">function</span>(<span class="variable">$scope</span>,helloAngular){</span><br><span class="line">		<span class="variable">$scope</span>.Name = helloAngular.getName();</span><br><span class="line">	}</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<h6 id="factory_u7684_u5199_u6CD5_uFF1A"><a href="#factory_u7684_u5199_u6CD5_uFF1A" class="headerlink" title="factory&#x7684;&#x5199;&#x6CD5;&#xFF1A;"></a>factory&#x7684;&#x5199;&#x6CD5;&#xFF1A;</h6><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var myModule = angular.module(<span class="string">&apos;MyModule&apos;</span>,[]);</span><br><span class="line">myModule.factory(<span class="string">&apos;HelloAngular&apos;</span>,<span class="keyword">function</span>(){</span><br><span class="line">	var name = <span class="string">&apos;hello world&apos;</span>;</span><br><span class="line">	function getName(){</span><br><span class="line">		return name;</span><br><span class="line">	}</span><br><span class="line">	return {</span><br><span class="line">		getName:getName;</span><br><span class="line">	}</span><br><span class="line">});</span><br><span class="line">myModule.controller(<span class="string">&apos;MyCtrl&apos;</span>,[<span class="string">&apos;$scope&apos;</span>,<span class="string">&apos;HelloAngular&apos;</span>,</span><br><span class="line">	<span class="keyword">function</span>(<span class="variable">$scope</span>,helloAngular){</span><br><span class="line">		<span class="variable">$scope</span>.Name = helloAngular.getName();</span><br><span class="line">	}</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<h6 id="service_u7684_u5199_u6CD5_uFF1A"><a href="#service_u7684_u5199_u6CD5_uFF1A" class="headerlink" title="service&#x7684;&#x5199;&#x6CD5;&#xFF1A;"></a>service&#x7684;&#x5199;&#x6CD5;&#xFF1A;</h6><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var myModule = angular.module(<span class="string">&apos;MyModule&apos;</span>,[]);</span><br><span class="line">myModule.service(<span class="string">&apos;HelloAngular&apos;</span>,<span class="keyword">function</span>(){</span><br><span class="line">	this.name = <span class="string">&apos;hello world&apos;</span>;</span><br><span class="line">	this.getName = function(){</span><br><span class="line">		return this.name;</span><br><span class="line">	}</span><br><span class="line">});</span><br><span class="line">myModule.controller(<span class="string">&apos;MyCtrl&apos;</span>,[<span class="string">&apos;$scope&apos;</span>,<span class="string">&apos;HelloAngular&apos;</span>,</span><br><span class="line">	<span class="keyword">function</span>(<span class="variable">$scope</span>,helloAngular){</span><br><span class="line">		<span class="variable">$scope</span>.Name = helloAngular.getName();</span><br><span class="line">	}</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<p>&#x603B;&#x7ED3;&#xFF1A;provide&#x662F;&#x57FA;&#x7840;&#xFF0C;&#x5176;&#x4F59;&#x90FD;&#x662F;&#x8C03;&#x7528;provider&#x51FD;&#x6570;&#x5B9E;&#x73B0;&#x7684;&#x3002;&#x4ECE;provide&#x5F00;&#x59CB;&#x7075;&#x6D3B;&#x6027;&#x8D8A;&#x6765;&#x8D8A;&#x5DEE;&#x3002;</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
 
     
       
@@ -746,111 +875,6 @@ _&#x8FD9;&#x662F;&#x659C;&#x4F53;_
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/12/30/Css居中的几种写法/" itemprop="url">
-                  Css居中的几种写法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-12-30T19:54:55+08:00" content="2015-12-30">
-              2015-12-30
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/12/30/Css居中的几种写法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/30/Css居中的几种写法/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>&#x524D;&#x7AEF;&#x5C45;&#x4E2D;&#x6709;&#x51E0;&#x79CD;&#x5199;&#x6CD5;&#xFF0C;&#x5C31;&#x6211;&#x7528;&#x8FC7;&#x7684;&#x51E0;&#x79CD;&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#x3002;</p>
-<h2 id="u7B2C_u4E00_u79CD_u662F_u7528_u7EDD_u5BF9_u5B9A_u4F4D_u5C45_u4E2D"><a href="#u7B2C_u4E00_u79CD_u662F_u7528_u7EDD_u5BF9_u5B9A_u4F4D_u5C45_u4E2D" class="headerlink" title="&#x7B2C;&#x4E00;&#x79CD;&#x662F;&#x7528;&#x7EDD;&#x5BF9;&#x5B9A;&#x4F4D;&#x5C45;&#x4E2D;"></a>&#x7B2C;&#x4E00;&#x79CD;&#x662F;&#x7528;&#x7EDD;&#x5BF9;&#x5B9A;&#x4F4D;&#x5C45;&#x4E2D;</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">div</span><span class="rules">{</span><br><span class="line">	<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">	<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">	<span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>;</span><br><span class="line">	<span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</span><br><span class="line">	<span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">50%</span></span></span>;</span><br><span class="line">	<span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">50%</span></span></span>;</span><br><span class="line">	<span class="rule"><span class="attribute">margin-top</span>:<span class="value"> -<span class="number">50px</span></span></span>;</span><br><span class="line">	<span class="rule"><span class="attribute">margin-left</span>:<span class="value"> -<span class="number">50px</span></span></span>;</span><br><span class="line">}</span></span><br></pre></td></tr></table></figure>
-<h2 id="u5F53_u6211_u4EEC_u4E0D_u8BBE_u7F6E_u5BBD_u9AD8_u7684_u65F6_u5019_u4E5F_u53EF_u4EE5_u7528_u8FD9_u79CD_u65B9_u5F0F_u5B9E_u73B0"><a href="#u5F53_u6211_u4EEC_u4E0D_u8BBE_u7F6E_u5BBD_u9AD8_u7684_u65F6_u5019_u4E5F_u53EF_u4EE5_u7528_u8FD9_u79CD_u65B9_u5F0F_u5B9E_u73B0" class="headerlink" title="&#x5F53;&#x6211;&#x4EEC;&#x4E0D;&#x8BBE;&#x7F6E;&#x5BBD;&#x9AD8;&#x7684;&#x65F6;&#x5019;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;"></a>&#x5F53;&#x6211;&#x4EEC;&#x4E0D;&#x8BBE;&#x7F6E;&#x5BBD;&#x9AD8;&#x7684;&#x65F6;&#x5019;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;</h2><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">div</span>{</span><br><span class="line">	<span class="attribute">position</span>: absolute;</span><br><span class="line">	<span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">	<span class="attribute">right</span>: <span class="number">50%</span>;</span><br><span class="line">	<span class="attribute">transform</span>: <span class="function">translate</span>(-<span class="number">50%</span>&#xFF0C;-<span class="number">50%</span>);</span><br><span class="line">&#xFF1B;}</span><br></pre></td></tr></table></figure>
-<h2 id="u5F53_u6211_u4EEC_u53EA_u8BBE_u7F6E_u5DE6_u53F3_u5C45_u4E2D_u65F6_u53EF_u4EE5_u7528_u6700_u5E38_u89C1_u7684"><a href="#u5F53_u6211_u4EEC_u53EA_u8BBE_u7F6E_u5DE6_u53F3_u5C45_u4E2D_u65F6_u53EF_u4EE5_u7528_u6700_u5E38_u89C1_u7684" class="headerlink" title="&#x5F53;&#x6211;&#x4EEC;&#x53EA;&#x8BBE;&#x7F6E;&#x5DE6;&#x53F3;&#x5C45;&#x4E2D;&#x65F6;&#x53EF;&#x4EE5;&#x7528;&#x6700;&#x5E38;&#x89C1;&#x7684;"></a>&#x5F53;&#x6211;&#x4EEC;&#x53EA;&#x8BBE;&#x7F6E;&#x5DE6;&#x53F3;&#x5C45;&#x4E2D;&#x65F6;&#x53EF;&#x4EE5;&#x7528;&#x6700;&#x5E38;&#x89C1;&#x7684;</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">div</span><span class="rules">{</span><br><span class="line">	<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">	<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">	<span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">100px</span> auto</span></span>;</span><br><span class="line">}</span></span><br></pre></td></tr></table></figure>
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -897,7 +921,7 @@ _&#x8FD9;&#x662F;&#x659C;&#x4F53;_
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -911,7 +935,7 @@ _&#x8FD9;&#x662F;&#x659C;&#x4F53;_
 
           <div class="site-state-item site-state-tags">
             
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">标签</span>
               
           </div>
