@@ -57,7 +57,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/01/24/javascript中this关键字的理解/index.html">
 <meta property="og:site_name" content="My Blog">
 <meta property="og:description" content="&amp;#x4E0D;&amp;#x77E5;&amp;#x9053;&amp;#x662F;&amp;#x4E0D;&amp;#x662F;&amp;#x71AC;&amp;#x591C;&amp;#x7684;&amp;#x539F;&amp;#x56E0;&amp;#xFF0C;&amp;#x611F;&amp;#x89C9;&amp;#x8BB0;&amp;#x5FC6;&amp;#x529B;&amp;#x597D;&amp;#x70B9;&amp;#x5DEE;&amp;#xFF0C;&amp;#x539F;&amp;#x672C;&amp;#x7406;&amp;#x89E3;">
-<meta property="og:updated_time" content="2016-03-14T04:41:26.995Z">
+<meta property="og:updated_time" content="2016-05-20T16:19:04.713Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript中this关键字的理解">
 <meta name="twitter:description" content="&amp;#x4E0D;&amp;#x77E5;&amp;#x9053;&amp;#x662F;&amp;#x4E0D;&amp;#x662F;&amp;#x71AC;&amp;#x591C;&amp;#x7684;&amp;#x539F;&amp;#x56E0;&amp;#xFF0C;&amp;#x611F;&amp;#x89C9;&amp;#x8BB0;&amp;#x5FC6;&amp;#x529B;&amp;#x597D;&amp;#x70B9;&amp;#x5DEE;&amp;#xFF0C;&amp;#x539F;&amp;#x672C;&amp;#x7406;&amp;#x89E3;">
@@ -298,7 +298,7 @@
       
 
       
-        <span itemprop="articleBody"><p>&#x4E0D;&#x77E5;&#x9053;&#x662F;&#x4E0D;&#x662F;&#x71AC;&#x591C;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x611F;&#x89C9;&#x8BB0;&#x5FC6;&#x529B;&#x597D;&#x70B9;&#x5DEE;&#xFF0C;&#x539F;&#x672C;&#x7406;&#x89E3;&#x7684;&#x4E1C;&#x897F;&#x8981;&#x662F;&#x4E0D;&#x53BB;&#x7FFB;&#x7FFB;&#x8FC7;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5C31;&#x5FD8;&#x4E86;&#x3002;&#x3002;&#x3002;&#x4EE5;&#x540E;&#x6709;&#x65F6;&#x95F4;&#x8FD8;&#x662F;&#x8981;&#x591A;&#x770B;&#x770B;&#x4EE5;&#x524D;&#x7684;&#x535A;&#x5BA2;&#x3002;<br>&#x8FD9;&#x7BC7;&#x535A;&#x5BA2;&#x7528;&#x6765;&#x8BB0;&#x5F55;&#x6211;&#x5BF9;javascript&#x4E2D;this&#x5173;&#x952E;&#x5B57;&#x7684;&#x7406;&#x89E3;&#x3002;&#x4E0B;&#x9762;&#x6B65;&#x5165;&#x6B63;&#x9898;&#x3002;</p>
+        <span itemprop="articleBody"><p>&#x4E0D;&#x77E5;&#x9053;&#x662F;&#x4E0D;&#x662F;&#x71AC;&#x591C;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x611F;&#x89C9;&#x8BB0;&#x5FC6;&#x529B;&#x597D;&#x70B9;&#x5DEE;&#xFF0C;&#x539F;&#x672C;&#x7406;&#x89E3;&#x7684;&#x4E1C;&#x897F;&#x8981;&#x662F;&#x4E0D;&#x53BB;&#x7FFB;&#x7FFB;&#x8FC7;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5C31;&#x5FD8;&#x4E86;&#x3002;&#x3002;&#x3002;&#x4EE5;&#x540E;&#x6709;&#x65F6;&#x95F4;&#x8FD8;&#x662F;&#x8981;&#x591A;&#x770B;&#x770B;&#x4EE5;&#x524D;&#x7684;&#x535A;&#x5BA2;&#x3002;<br>&#x8FD9;&#x7BC7;&#x535A;&#x5BA2;&#x7528;&#x6765;&#x8BB0;&#x5F55;&#x6211;&#x5BF9;javascript&#x4E2D;this&#x5173;&#x952E;&#x5B57;&#x7684;&#x7406;&#x89E3;&#x3002;&#x4E0B;&#x9762;&#x6B65;&#x5165;&#x6B63;&#x9898;&#x3002;<br><a id="more"></a></p>
 <h2 id="this_u7684_u5E38_u89C4_u7528_u6CD5"><a href="#this_u7684_u5E38_u89C4_u7528_u6CD5" class="headerlink" title="this&#x7684;&#x5E38;&#x89C4;&#x7528;&#x6CD5;"></a>this&#x7684;&#x5E38;&#x89C4;&#x7528;&#x6CD5;</h2><h3 id="u5728_u5BF9_u8C61_u65B9_u6CD5_u4E2D_u4F7F_u7528"><a href="#u5728_u5BF9_u8C61_u65B9_u6CD5_u4E2D_u4F7F_u7528" class="headerlink" title="&#x5728;&#x5BF9;&#x8C61;&#x65B9;&#x6CD5;&#x4E2D;&#x4F7F;&#x7528;"></a>&#x5728;&#x5BF9;&#x8C61;&#x65B9;&#x6CD5;&#x4E2D;&#x4F7F;&#x7528;</h3><p>&#x793A;&#x4F8B;&#xFF1A;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = {};</span><br><span class="line">obj.x = <span class="number">5</span>;</span><br><span class="line">obj.y = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{<span class="built_in">console</span>.log(<span class="keyword">this</span>.x)};   <span class="comment">//5</span></span><br></pre></td></tr></table></figure></p>
 <p>&#x5728;&#x5BF9;&#x8C61;&#x7684;y&#x65B9;&#x6CD5;&#x4E2D;&#x7684;this&#x6240;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x663E;&#x7136;&#x662F;obj&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x4E2A;&#x5E94;&#x8BE5;&#x4E0D;&#x96BE;&#x7406;&#x89E3;&#x3002;</p>
 <h3 id="u5728_u666E_u901A_u51FD_u6570_u4E2D_u5F15_u7528"><a href="#u5728_u666E_u901A_u51FD_u6570_u4E2D_u5F15_u7528" class="headerlink" title="&#x5728;&#x666E;&#x901A;&#x51FD;&#x6570;&#x4E2D;&#x5F15;&#x7528;"></a>&#x5728;&#x666E;&#x901A;&#x51FD;&#x6570;&#x4E2D;&#x5F15;&#x7528;</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun1</span>(<span class="params"></span>)</span>{<span class="built_in">console</span>.log(<span class="keyword">this</span>)};  </span><br><span class="line">fun1();      <span class="comment">//window</span></span><br></pre></td></tr></table></figure>
@@ -413,7 +413,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

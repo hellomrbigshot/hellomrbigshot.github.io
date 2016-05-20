@@ -57,7 +57,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/04/22/Canvas初学笔记/index.html">
 <meta property="og:site_name" content="My Blog">
 <meta property="og:description" content="&amp;#x4EE5;&amp;#x524D;&amp;#x505A;&amp;#x7684;&amp;#x524D;&amp;#x7AEF;&amp;#x7684;&amp;#x52A8;&amp;#x753B;&amp;#x90FD;&amp;#x662F;&amp;#x57FA;&amp;#x4E8E;CSS&amp;#x6216;&amp;#x8005;JS&amp;#x4E8B;&amp;#x4EF6;&amp;#x7684;&amp;#xFF0C;&amp;#x867D;&amp;#x7136;&amp;#x4E00;&amp;#x76F4;&amp;#x77E5;&amp;#x">
-<meta property="og:updated_time" content="2016-04-22T17:06:26.486Z">
+<meta property="og:updated_time" content="2016-05-20T16:18:31.719Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Canvas初学笔记">
 <meta name="twitter:description" content="&amp;#x4EE5;&amp;#x524D;&amp;#x505A;&amp;#x7684;&amp;#x524D;&amp;#x7AEF;&amp;#x7684;&amp;#x52A8;&amp;#x753B;&amp;#x90FD;&amp;#x662F;&amp;#x57FA;&amp;#x4E8E;CSS&amp;#x6216;&amp;#x8005;JS&amp;#x4E8B;&amp;#x4EF6;&amp;#x7684;&amp;#xFF0C;&amp;#x867D;&amp;#x7136;&amp;#x4E00;&amp;#x76F4;&amp;#x77E5;&amp;#x">
@@ -298,7 +298,7 @@
       
 
       
-        <span itemprop="articleBody"><p>&#x4EE5;&#x524D;&#x505A;&#x7684;&#x524D;&#x7AEF;&#x7684;&#x52A8;&#x753B;&#x90FD;&#x662F;&#x57FA;&#x4E8E;CSS&#x6216;&#x8005;JS&#x4E8B;&#x4EF6;&#x7684;&#xFF0C;&#x867D;&#x7136;&#x4E00;&#x76F4;&#x77E5;&#x9053;HTML5&#x4E2D;&#x65B0;&#x589E;&#x4E86;&#x753B;&#x5E03;Canvas&#x7528;&#x6765;&#x5728;&#x7F51;&#x9875;&#x4E0A;&#x5B9E;&#x65F6;&#x751F;&#x6210;&#x56FE;&#x50CF;&#xFF0C;&#x4F46;&#x662F;&#x4E00;&#x76F4;&#x6CA1;&#x673A;&#x4F1A;&#x7528;&#x3002;&#x8FD1;&#x671F;&#x6BD5;&#x8BBE;&#x4E2D;&#x671F;&#x68C0;&#x67E5;&#x521A;&#x8FC7;&#xFF0C;&#x6709;&#x4E00;&#x4E9B;&#x7A7A;&#x4F59;&#x65F6;&#x95F4;&#xFF0C;&#x5C31;&#x5B66;&#x4E86;&#x70B9;Canvas&#x7684;&#x57FA;&#x7840;&#x7528;&#x6CD5;&#x3002;</p>
+        <span itemprop="articleBody"><p>&#x4EE5;&#x524D;&#x505A;&#x7684;&#x524D;&#x7AEF;&#x7684;&#x52A8;&#x753B;&#x90FD;&#x662F;&#x57FA;&#x4E8E;CSS&#x6216;&#x8005;JS&#x4E8B;&#x4EF6;&#x7684;&#xFF0C;&#x867D;&#x7136;&#x4E00;&#x76F4;&#x77E5;&#x9053;HTML5&#x4E2D;&#x65B0;&#x589E;&#x4E86;&#x753B;&#x5E03;Canvas&#x7528;&#x6765;&#x5728;&#x7F51;&#x9875;&#x4E0A;&#x5B9E;&#x65F6;&#x751F;&#x6210;&#x56FE;&#x50CF;&#xFF0C;&#x4F46;&#x662F;&#x4E00;&#x76F4;&#x6CA1;&#x673A;&#x4F1A;&#x7528;&#x3002;&#x8FD1;&#x671F;&#x6BD5;&#x8BBE;&#x4E2D;&#x671F;&#x68C0;&#x67E5;&#x521A;&#x8FC7;&#xFF0C;&#x6709;&#x4E00;&#x4E9B;&#x7A7A;&#x4F59;&#x65F6;&#x95F4;&#xFF0C;&#x5C31;&#x5B66;&#x4E86;&#x70B9;Canvas&#x7684;&#x57FA;&#x7840;&#x7528;&#x6CD5;&#x3002;<br><a id="more"></a></p>
 <h2 id="Canvas_u57FA_u672C_u7528_u6CD5"><a href="#Canvas_u57FA_u672C_u7528_u6CD5" class="headerlink" title="Canvas&#x57FA;&#x672C;&#x7528;&#x6CD5;"></a>Canvas&#x57FA;&#x672C;&#x7528;&#x6CD5;</h2><p>&#x9996;&#x5148;&#x5728;body&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;canvas&#x6807;&#x7B7E;</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">canvas</span> <span class="attribute">id</span>=<span class="value">&quot;canvas&quot;</span> <span class="attribute">width</span>=<span class="value">&quot;1024&quot;</span> <span class="attribute">height</span>=<span class="value">&quot;800&quot;</span> <span class="attribute">style</span>=<span class="value">&quot;border: 1px solid #000; margin: 20px auto;&quot;</span>&gt;</span>&#x5F53;&#x524D;&#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x652F;&#x6301;Canvas<span class="tag">&lt;/<span class="title">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5C31;&#x662F;&#x5728;&#x7F51;&#x9875;&#x4E2D;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x5757;&#x5BBD;1024&#x9AD8;800&#x5E76;&#x4E14;&#x5DE6;&#x53F3;&#x5C45;&#x4E2D;&#x7684;&#x753B;&#x5E03;&#x3002;<br>canvas&#x6807;&#x7B7E;&#x4E2D;&#x7684;&#x6587;&#x5B57;&#x7528;&#x6765;&#x9A8C;&#x8BC1;&#x6D4F;&#x89C8;&#x5668;&#x662F;&#x5426;&#x652F;&#x6301;Canvas&#x3002;&#x5982;&#x679C;&#x4E0D;&#x652F;&#x6301;Canvas&#xFF0C;&#x5219;&#x663E;&#x793A;&#x6587;&#x5B57;&#xFF1B;&#x5426;&#x5219;&#x663E;&#x793A;canvas&#x753B;&#x5E03;&#x4E0D;&#x663E;&#x793A;&#x6587;&#x5B57;&#x3002;</p>
@@ -344,6 +344,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/20/毕设完成后的一些想法/" rel="prev" title="毕设完成后的一些想法">
+                毕设完成后的一些想法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -415,7 +419,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

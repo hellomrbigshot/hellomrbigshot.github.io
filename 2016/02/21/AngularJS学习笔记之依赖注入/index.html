@@ -57,7 +57,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/02/21/AngularJS学习笔记之依赖注入/index.html">
 <meta property="og:site_name" content="My Blog">
 <meta property="og:description" content="&amp;#x5B9E;&amp;#x4E60;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x7528;AngularJS&amp;#x6BD4;&amp;#x8F83;&amp;#x591A;&amp;#xFF0C;&amp;#x5199;&amp;#x4E00;&amp;#x7BC7;&amp;#x5B66;&amp;#x4E60;&amp;#x7B14;&amp;#x8BB0;&amp;#x7528;&amp;#x6765;&amp;#x8BB0;&amp;#x5F55;&amp;#x4F9D;&amp;#x8D56;&amp;#x6CE8">
-<meta property="og:updated_time" content="2016-02-21T15:27:39.344Z">
+<meta property="og:updated_time" content="2016-05-20T16:18:19.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AngularJS学习笔记之依赖注入">
 <meta name="twitter:description" content="&amp;#x5B9E;&amp;#x4E60;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x7528;AngularJS&amp;#x6BD4;&amp;#x8F83;&amp;#x591A;&amp;#xFF0C;&amp;#x5199;&amp;#x4E00;&amp;#x7BC7;&amp;#x5B66;&amp;#x4E60;&amp;#x7B14;&amp;#x8BB0;&amp;#x7528;&amp;#x6765;&amp;#x8BB0;&amp;#x5F55;&amp;#x4F9D;&amp;#x8D56;&amp;#x6CE8">
@@ -298,7 +298,7 @@
       
 
       
-        <span itemprop="articleBody"><p>&#x5B9E;&#x4E60;&#x7684;&#x65F6;&#x5019;&#x7528;AngularJS&#x6BD4;&#x8F83;&#x591A;&#xFF0C;&#x5199;&#x4E00;&#x7BC7;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;&#x7528;&#x6765;&#x8BB0;&#x5F55;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;&#x3002;<br>ng&#x4E2D;&#x7684;&#x201C;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x201D;&#x662F;&#x901A;&#x8FC7;provider&#x548C;injector&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+        <span itemprop="articleBody"><p>&#x5B9E;&#x4E60;&#x7684;&#x65F6;&#x5019;&#x7528;AngularJS&#x6BD4;&#x8F83;&#x591A;&#xFF0C;&#x5199;&#x4E00;&#x7BC7;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;&#x7528;&#x6765;&#x8BB0;&#x5F55;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;&#x3002;<br>ng&#x4E2D;&#x7684;&#x201C;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x201D;&#x662F;&#x901A;&#x8FC7;provider&#x548C;injector&#x5B9E;&#x73B0;&#x7684;&#x3002;<br><a id="more"></a></p>
 <h3 id="u6CE8_u5165_u65B9_u5F0F_uFF1A"><a href="#u6CE8_u5165_u65B9_u5F0F_uFF1A" class="headerlink" title="&#x6CE8;&#x5165;&#x65B9;&#x5F0F;&#xFF1A;"></a>&#x6CE8;&#x5165;&#x65B9;&#x5F0F;&#xFF1A;</h3><h5 id="1_u3001_u63A8_u65AD_u578B_u6CE8_u5165_uFF1A_u51FD_u6570_u53C2_u6570_u7684_u540D_u79F0_u5FC5_u987B_u8981_u548C_u88AB_u6CE8_u5165_u7684_u5BF9_u8C61_u76F8_u540C"><a href="#1_u3001_u63A8_u65AD_u578B_u6CE8_u5165_uFF1A_u51FD_u6570_u53C2_u6570_u7684_u540D_u79F0_u5FC5_u987B_u8981_u548C_u88AB_u6CE8_u5165_u7684_u5BF9_u8C61_u76F8_u540C" class="headerlink" title="1&#x3001;&#x63A8;&#x65AD;&#x578B;&#x6CE8;&#x5165;&#xFF1A;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x7684;&#x540D;&#x79F0;&#x5FC5;&#x987B;&#x8981;&#x548C;&#x88AB;&#x6CE8;&#x5165;&#x7684;&#x5BF9;&#x8C61;&#x76F8;&#x540C;"></a>1&#x3001;&#x63A8;&#x65AD;&#x578B;&#x6CE8;&#x5165;&#xFF1A;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x7684;&#x540D;&#x79F0;&#x5FC5;&#x987B;&#x8981;&#x548C;&#x88AB;&#x6CE8;&#x5165;&#x7684;&#x5BF9;&#x8C61;&#x76F8;&#x540C;</h5><p>&#x4F8B;&#x5B50;&#xFF1A;</p>
 <figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var myModule = angular.module(<span class="string">&apos;MyModule&apos;</span>,[]);</span><br><span class="line">var MyCtrl = <span class="keyword">function</span>(<span class="variable">$scope</span>){</span><br><span class="line">	<span class="variable">$scope</span>.name = <span class="string">&apos;hello world&apos;</span>;</span><br><span class="line">}</span><br><span class="line">myModule.controller(<span class="string">&apos;MyCtrl&apos;</span>,MyCtrl);</span><br></pre></td></tr></table></figure>
 <p>AngularJS&#x6839;&#x636E;&#x51FD;&#x6570;&#x7684;&#x7B7E;&#x540D;&#xFF0C;&#x4ECE;&#x4E2D;&#x627E;&#x5230;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5F53;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x65F6;&#x5019;&#x628A;&#x53C2;&#x6570;&#x6CE8;&#x5165;&#x3002;<br>&#x6CE8;&#x610F;&#x70B9;&#xFF1A;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x540D;&#x79F0;&#x5FC5;&#x987B;&#x8981;&#x548C;&#x88AB;&#x6CE8;&#x5165;&#x7684;&#x5BF9;&#x8C61;&#x76F8;&#x540C;&#x3002;<br>&#x5F53;js&#x538B;&#x7F29;&#x65F6;&#x4F1A;&#x51FA;&#x9519;&#x3002;</p>
@@ -417,7 +417,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
