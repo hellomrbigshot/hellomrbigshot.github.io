@@ -58,7 +58,9 @@
 <meta property="og:site_name" content="My Blog">
 <meta property="og:description" content="&amp;#x6700;&amp;#x8FD1;&amp;#x5728;&amp;#x516C;&amp;#x53F8;&amp;#x53C2;&amp;#x4E0E;&amp;#x7684;&amp;#x9879;&amp;#x76EE;&amp;#x4ECE;SVN&amp;#x8FC1;&amp;#x79FB;&amp;#x5230;git&amp;#x4E0A;&amp;#x4E86;&amp;#x3002;&amp;#x6BD5;&amp;#x7ADF;&amp;#x5934;&amp;#x53D1;&amp;#x77ED;&amp;#x8BB0;&amp;#x6027;&amp;#">
 <meta property="og:image" content="http://yoursite.com/2016/11/28/git指令快速入门/git_remote.png">
-<meta property="og:updated_time" content="2016-11-28T15:01:37.732Z">
+<meta property="og:image" content="http://yoursite.com/2016/11/28/git指令快速入门/git_status.png">
+<meta property="og:image" content="http://yoursite.com/2016/11/28/git指令快速入门/git_add.png">
+<meta property="og:updated_time" content="2016-11-28T15:55:59.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git指令快速入门">
 <meta name="twitter:description" content="&amp;#x6700;&amp;#x8FD1;&amp;#x5728;&amp;#x516C;&amp;#x53F8;&amp;#x53C2;&amp;#x4E0E;&amp;#x7684;&amp;#x9879;&amp;#x76EE;&amp;#x4ECE;SVN&amp;#x8FC1;&amp;#x79FB;&amp;#x5230;git&amp;#x4E0A;&amp;#x4E86;&amp;#x3002;&amp;#x6BD5;&amp;#x7ADF;&amp;#x5934;&amp;#x53D1;&amp;#x77ED;&amp;#x8BB0;&amp;#x6027;&amp;#">
@@ -301,12 +303,54 @@
       
         <span itemprop="articleBody"><p>&#x6700;&#x8FD1;&#x5728;&#x516C;&#x53F8;&#x53C2;&#x4E0E;&#x7684;&#x9879;&#x76EE;&#x4ECE;SVN&#x8FC1;&#x79FB;&#x5230;git&#x4E0A;&#x4E86;&#x3002;&#x6BD5;&#x7ADF;&#x5934;&#x53D1;&#x77ED;&#x8BB0;&#x6027;&#x5DEE;&#xFF0C;&#x4EC5;&#x4EE5;&#x6B64;&#x6587;&#x8BB0;&#x5F55;&#x5E38;&#x7528;&#x7684;git&#x6307;&#x4EE4;&#x3002;&#x624B;&#x52A8;&#x6342;&#x8138;&#x54ED;&#x2026;</p>
 <p>git&#x548C;SVN&#x6700;&#x5927;&#x7684;&#x533A;&#x522B;&#x662F;git&#x662F;&#x5206;&#x5E03;&#x5F0F;&#x7684;&#x7248;&#x672C;&#x63A7;&#x5236;&#x5DE5;&#x5177;&#xFF0C;SVN&#x662F;&#x96C6;&#x4E2D;&#x5F0F;&#x7684;&#x3002;git&#x7684;&#x4F7F;&#x7528;&#x8005;&#x6BCF;&#x4E2A;&#x4EBA;&#x90FD;&#x80FD;&#x6709;&#x4E00;&#x4E2A;&#x81EA;&#x5DF1;&#x7684;&#x7248;&#x672C;&#x5E93;&#xFF0C;&#x53EF;&#x4EE5;&#x5148;&#x5C06;&#x81EA;&#x5DF1;&#x7684;&#x6587;&#x4EF6;commit&#x5230;&#x7248;&#x672C;&#x5E93;&#x7136;&#x540E;&#x518D;push&#x5230;&#x5206;&#x652F;&#x4E0A;&#x3002;&#x800C;&#x7248;&#x672C;&#x5E93;&#x4E00;&#x822C;&#x662F;&#x672C;&#x5730;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6CA1;&#x6709;&#x7F51;&#x7EDC;&#x4E5F;&#x53EF;&#x4EE5;&#x5148;commit&#x3002;&#x800C;SVN&#x6BCF;&#x6B21;&#x4E0A;&#x4F20;&#x90FD;&#x8981;&#x4E0A;&#x4F20;&#x5230;&#x7EBF;&#x4E0A;&#x7684;&#x7248;&#x672C;&#x624D;&#x80FD;&#x66FF;&#x6362;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x80FD;&#x4FDD;&#x5B58;&#x3002;&#x4EE5;&#x4E0A;&#x533A;&#x522B;&#x4E0D;&#x4FDD;&#x8BC1;&#x5B8C;&#x5168;&#x6B63;&#x786E;&#xFF0C;&#x6BD5;&#x7ADF;&#x662F;&#x571F;&#x9CD6;&#x5B9E;&#x6218;&#x6D3E;&#xFF0C;&#x4F1A;&#x7528;&#x624D;&#x662F;&#x738B;&#x9053;&#x3002;</p>
-<p>###&#x5F00;&#x59CB;<br>&#x8FDB;&#x5165;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;</p>
-<p>#####&#x7B2C;&#x4E00;&#x6B65;:&#x8FDB;&#x884C;git&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5728;&#x6587;&#x4EF6;&#x5185;&#x751F;&#x6210;.git&#x6587;&#x4EF6;&#x5939;<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> init</span><br></pre></td></tr></table></figure></p>
-<p>#####&#x7B2C;&#x4E8C;&#x6B65;:&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x53F3;&#x952E;&#x65B0;&#x5EFA;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;linux&#x547D;&#x4EE4;<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">git</span> <span class="keyword">add </span>Readme.md</span><br></pre></td></tr></table></figure></p>
-<p>#####&#x7B2C;&#x4E09;&#x6B65;:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="operator"><span class="keyword">commit</span> -<span class="keyword">m</span> <span class="string">&quot;first commit&quot;</span></span><br><span class="line">git remote <span class="keyword">add</span> origin https://github.com/hellomrbigshot/Just_a_test.git</span></span><br></pre></td></tr></table></figure></p>
-<p>&#x8FD9;&#x4E00;&#x6B65;&#x9700;&#x8981;&#x8BE6;&#x7EC6;&#x89E3;&#x91CA;&#x3002;git commit -m &#x201C;xxx&#x201D; &#x7528;&#x6765;&#x5C06;&#x4F60;&#x7684;&#x6587;&#x4EF6;&#x63D0;&#x4EA4;&#x5230;&#x672C;&#x5730;&#x5E93;&#xFF0C;&#x6CE8;&#x610F;&#x662F;&#x672C;&#x5730;&#x5E93;&#xFF01;&#x8FD8;&#x6CA1;&#x6709;&#x4E0A;&#x4F20;&#x5230;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#xFF01;&#xFF01;&#xFF01;</p>
-<p>git remote add &#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x6DFB;&#x52A0;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x3002;&#x8FD9;&#x4E00;&#x53E5;&#x5C06;<a href="https://github.com/hellomrbigshot/Just_a_test.git&#x547D;&#x540D;&#x4E3A;git&#x3002;git" target="_blank" rel="external">https://github.com/hellomrbigshot/Just_a_test.git&#x547D;&#x540D;&#x4E3A;git&#x3002;git</a> remote &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x5217;&#x51FA;&#x6240;&#x6709;&#x7684;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x3002;git remote -v&#x53EF;&#x4EE5;&#x53C2;&#x770B;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x7684;&#x7F51;&#x5740;&#x3002;<br><img src="/2016/11/28/git&#x6307;&#x4EE4;&#x5FEB;&#x901F;&#x5165;&#x95E8;/git_remote.png" alt="&#x56FE;1"></p>
+<h3 id="u5F00_u59CB"><a href="#u5F00_u59CB" class="headerlink" title="&#x5F00;&#x59CB;"></a>&#x5F00;&#x59CB;</h3><p>&#x8FDB;&#x5165;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;<br><a id="more"></a></p>
+<h5 id="u7B2C_u4E00_u6B65_3A_u8FDB_u884Cgit_u521D_u59CB_u5316_uFF0C_u5728_u6587_u4EF6_u5185_u751F_u6210-git_u6587_u4EF6_u5939"><a href="#u7B2C_u4E00_u6B65_3A_u8FDB_u884Cgit_u521D_u59CB_u5316_uFF0C_u5728_u6587_u4EF6_u5185_u751F_u6210-git_u6587_u4EF6_u5939" class="headerlink" title="&#x7B2C;&#x4E00;&#x6B65;:&#x8FDB;&#x884C;git&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5728;&#x6587;&#x4EF6;&#x5185;&#x751F;&#x6210;.git&#x6587;&#x4EF6;&#x5939;"></a>&#x7B2C;&#x4E00;&#x6B65;:&#x8FDB;&#x884C;git&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5728;&#x6587;&#x4EF6;&#x5185;&#x751F;&#x6210;.git&#x6587;&#x4EF6;&#x5939;</h5><pre><code>git init
+</code></pre><h5 id="u7B2C_u4E8C_u6B65_3A_u65B0_u5EFA_u4E00_u4E2A_u6587_u4EF6_uFF0C_u53EF_u4EE5_u76F4_u63A5_u53F3_u952E_u65B0_u5EFA_uFF0C_u4E5F_u53EF_u4EE5_u7528linux_u547D_u4EE4"><a href="#u7B2C_u4E8C_u6B65_3A_u65B0_u5EFA_u4E00_u4E2A_u6587_u4EF6_uFF0C_u53EF_u4EE5_u76F4_u63A5_u53F3_u952E_u65B0_u5EFA_uFF0C_u4E5F_u53EF_u4EE5_u7528linux_u547D_u4EE4" class="headerlink" title="&#x7B2C;&#x4E8C;&#x6B65;:&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x53F3;&#x952E;&#x65B0;&#x5EFA;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;linux&#x547D;&#x4EE4;"></a>&#x7B2C;&#x4E8C;&#x6B65;:&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x53F3;&#x952E;&#x65B0;&#x5EFA;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;linux&#x547D;&#x4EE4;</h5><pre><code>git add Readme.md
+</code></pre><h5 id="u7B2C_u4E09_u6B65_3A"><a href="#u7B2C_u4E09_u6B65_3A" class="headerlink" title="&#x7B2C;&#x4E09;&#x6B65;:"></a>&#x7B2C;&#x4E09;&#x6B65;:</h5><pre><code>git commit -m &quot;first commit&quot;
+git remote add origin https://github.com/hellomrbigshot/Just_a_test.git
+</code></pre><p>&#x8FD9;&#x4E00;&#x6B65;&#x9700;&#x8981;&#x8BE6;&#x7EC6;&#x89E3;&#x91CA;&#x3002;git commit -m &#x201C;xxx&#x201D; &#x7528;&#x6765;&#x5C06;&#x4F60;&#x7684;&#x6587;&#x4EF6;&#x63D0;&#x4EA4;&#x5230;&#x672C;&#x5730;&#x5E93;&#xFF0C;&#x6CE8;&#x610F;&#x662F;&#x672C;&#x5730;&#x5E93;&#xFF01;&#x8FD8;&#x6CA1;&#x6709;&#x4E0A;&#x4F20;&#x5230;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#xFF01;&#xFF01;&#xFF01;</p>
+<p>git remote add &#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x6DFB;&#x52A0;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x3002;&#x8FD9;&#x4E00;&#x53E5;&#x5C06; <a href="https://github.com/hellomrbigshot/Just_a_test.git" target="_blank" rel="external">https://github.com/hellomrbigshot/Just_a_test.git</a> &#x547D;&#x540D;&#x4E3A;origin&#x3002;git remote &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x5217;&#x51FA;&#x6240;&#x6709;&#x7684;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x3002;git remote -v&#x53EF;&#x4EE5;&#x53C2;&#x770B;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x7684;&#x7F51;&#x5740;&#x3002;</p>
+<p><img src="/2016/11/28/git&#x6307;&#x4EE4;&#x5FEB;&#x901F;&#x5165;&#x95E8;/git_remote.png" alt="&#x56FE;1"></p>
+<h5 id="u7B2C_u56DB_u6B65_3A_u5C06_u672C_u5730_u5E93push_u5230_u8FDC_u7A0B_u4E3B_u673A"><a href="#u7B2C_u56DB_u6B65_3A_u5C06_u672C_u5730_u5E93push_u5230_u8FDC_u7A0B_u4E3B_u673A" class="headerlink" title="&#x7B2C;&#x56DB;&#x6B65;:&#x5C06;&#x672C;&#x5730;&#x5E93;push&#x5230;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;"></a>&#x7B2C;&#x56DB;&#x6B65;:&#x5C06;&#x672C;&#x5730;&#x5E93;push&#x5230;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;</h5><pre><code>git push -u origin master
+</code></pre><p>&#x8FD9;&#x6837;&#x6700;&#x7B80;&#x5355;&#x7684;&#x5C06;&#x672C;&#x5730;&#x4EE3;&#x7801;push&#x5230;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x7684;&#x529F;&#x80FD;&#x5C31;&#x5B9E;&#x73B0;&#x4E86;&#xFF01;</p>
+<p>&#x4E4B;&#x540E;&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#xFF0C;&#x6539;&#x53D8;&#x4E4B;&#x540E;&#x7528;</p>
+<pre><code>git status
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x548C;&#x672C;&#x5730;&#x5E93;&#x4E0D;&#x540C;&#x7684;&#x5185;&#x5BB9;&#x4F1A;&#x4EE5;&#x7EA2;&#x8272;&#x5448;&#x73B0;&#x3002;</p>
+<p><img src="/2016/11/28/git&#x6307;&#x4EE4;&#x5FEB;&#x901F;&#x5165;&#x95E8;/git_status.png" alt="&#x56FE;2"></p>
+<p>&#x8FD9;&#x65F6;&#x6211;&#x4EEC;&#x8981;&#x5C06;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x63D0;&#x4EA4;&#x7684;&#x6587;&#x4EF6;&#x52A0;&#x5165;&#x6682;&#x5B58;&#x533A;</p>
+<pre><code>git add .
+git add d.txt
+</code></pre><p>&#x7528;.&#x8868;&#x793A;&#x5168;&#x90E8;&#xFF0C;&#x8F93;&#x5165;&#x6587;&#x4EF6;&#x540D;&#x5219;&#x53EA;&#x6DFB;&#x52A0;&#x67D0;&#x4E2A;&#x3002;</p>
+<p>&#x8FD9;&#x65F6;&#x5019;&#x518D;&#x7528;git status&#x67E5;&#x770B;&#x4E00;&#x4E0B;&#x72B6;&#x6001;&#x3002;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6DFB;&#x52A0;&#x5230;&#x6682;&#x5B58;&#x533A;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x53D8;&#x4E3A;&#x84DD;&#x8272;&#x3002;</p>
+<p><img src="/2016/11/28/git&#x6307;&#x4EE4;&#x5FEB;&#x901F;&#x5165;&#x95E8;/git_add.png" alt="&#x56FE;3"></p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x8981;&#x5C06;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x4ECE;&#x6682;&#x5B58;&#x533A;&#x79FB;&#x9664;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;</p>
+<pre><code>git reset HEAD d.txt
+git rm --cache d.txt
+</code></pre><p>&#x8FD9;&#x4E24;&#x4E2A;&#x6307;&#x4EE4;&#x5747;&#x6709;&#x8FD9;&#x4E2A;&#x6548;&#x679C;<br>&#x82E5;&#x662F;&#x60F3;&#x5C06;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x4ECE;&#x6682;&#x5B58;&#x533A;&#x79FB;&#x9664;&#x5E76;&#x5220;&#x9664;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4EE5;&#x4E0B;&#x6307;&#x4EE4;</p>
+<pre><code>git rm -f d.txt
+</code></pre><p>&#x4E4B;&#x540E;&#x7528;&#x4EE5;&#x4E0B;&#x6307;&#x4EE4;&#x5C06;&#x6587;&#x4EF6;&#x63D0;&#x4EA4;&#x5230;&#x672C;&#x5730;&#x5E93;</p>
+<pre><code>git commit -m &quot;some words&quot;
+</code></pre><p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x6B64;&#x65F6;&#x9519;&#x8BEF;&#x5730;&#x5C06;&#x6587;&#x4EF6;&#x63D0;&#x4EA4;&#x5230;&#x4E86;&#x672C;&#x5730;&#x5E93;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4EE5;&#x4E0B;&#x65B9;&#x5F0F;&#x64A4;&#x9500;&#x672C;&#x5730;&#x5E93;&#x7684;&#x4FEE;&#x6539;</p>
+<pre><code>//&#x4EC5;&#x4EC5;&#x53EA;&#x662F;&#x64A4;&#x9500;&#x5DF2;&#x63D0;&#x4EA4;&#x7684;&#x672C;&#x5730;&#x5E93;&#xFF0C;&#x4E0D;&#x4F1A;&#x4FEE;&#x6539;&#x6682;&#x5B58;&#x533A;&#x548C;&#x5DE5;&#x4F5C;&#x533A;
+git reset --soft &#x7248;&#x672C;&#x5E93;ID
+
+//&#x4EC5;&#x4EC5;&#x53EA;&#x662F;&#x64A4;&#x9500;&#x5DF2;&#x63D0;&#x4EA4;&#x7684;&#x672C;&#x5730;&#x5E93;&#x548C;&#x6682;&#x5B58;&#x533A;&#xFF0C;&#x4E0D;&#x4F1A;&#x4FEE;&#x6539;&#x5DE5;&#x4F5C;&#x533A;
+git reset --mixed &#x7248;&#x672C;&#x5E93;ID
+
+//&#x5F7B;&#x5E95;&#x5C06;&#x5DE5;&#x4F5C;&#x533A;&#x3001;&#x6682;&#x5B58;&#x533A;&#x548C;&#x672C;&#x5730;&#x5E93;&#x8BB0;&#x5F55;&#x6062;&#x590D;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x672C;&#x5730;&#x5E93;
+git reset --hard &#x7248;&#x672C;&#x5E93;ID
+</code></pre><p>&#x63D0;&#x4EA4;&#x5230;&#x672C;&#x5730;&#x5E93;&#x4E4B;&#x540E;&#x6700;&#x7EC8;&#x5C06;&#x5B83;push&#x5230;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;</p>
+<pre><code>git push -u origin master
+</code></pre><p>master&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x4F60;&#x7684;&#x5206;&#x652F;&#x540D;</p>
+<p>&#x663E;&#x793A;&#x63D0;&#x4EA4;&#x5386;&#x53F2;&#x6307;&#x4EE4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>git log -p -2
+</code></pre><p>&#x5982;&#x679C;&#x4E0D;&#x6DFB;&#x52A0;&#x53C2;&#x6570;, git log &#x4F1A;&#x6309;&#x63D0;&#x4EA4;&#x65F6;&#x95F4;&#x5217;&#x51FA;&#x6240;&#x6709;&#x7684;&#x66F4;&#x65B0;&#xFF0C;&#x6700;&#x8FD1;&#x7684;&#x66F4;&#x65B0;&#x6392;&#x5728;&#x6700;&#x4E0A;&#x9762;,&#x4F7F;&#x7528; git log &#x540E;&#x6309;q&#x952E;&#x9000;&#x51FA;&#x3002;&#x53C2;&#x6570;-2&#x663E;&#x793A;&#x6700;&#x8FD1;&#x7684;&#x4E24;&#x6B21;&#x63D0;&#x4EA4;&#xFF0C;&#x800C;-p&#x663E;&#x793A;&#x5177;&#x4F53;&#x7684;&#x5185;&#x5BB9;&#x5DEE;&#x5F02;&#x3002;<br>&#x8FD8;&#x53EF;&#x4EE5;&#x7528; git log &#x2013;stat &#x663E;&#x793A;&#x589E;&#x6539;&#x884C;&#x6570;&#x7EDF;&#x8BA1;&#x3002;</p>
+<h3 id="u5220_u9664_u6587_u4EF6"><a href="#u5220_u9664_u6587_u4EF6" class="headerlink" title="&#x5220;&#x9664;&#x6587;&#x4EF6;"></a>&#x5220;&#x9664;&#x6587;&#x4EF6;</h3><p>&#x53EF;&#x4EE5;&#x7528;linux&#x547D;&#x4EE4;&#x8FDB;&#x884C;&#x5220;&#x9664;&#xFF0C;&#x6216;&#x8005;&#x76F4;&#x63A5;&#x53F3;&#x952E;&#x5220;&#x9664;&#x3002;linux&#x5220;&#x9664;&#x5982;&#x4E0B;:</p>
+<pre><code>rm -rf Readme.md
+</code></pre><p>&#x4E4B;&#x540E;&#x5C06;&#x5220;&#x9664;&#x4FDD;&#x5B58;&#x5230;&#x6682;&#x5B58;&#x533A;</p>
+<pre><code>git rm Readme.md
+</code></pre><p>&#x4E4B;&#x540E;&#x63D0;&#x4EA4;&#x5230;&#x672C;&#x5730;&#x5E93;&#xFF0C;&#x6700;&#x540E;push&#x5230;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x6682;&#x65F6;&#x5C31;&#x60F3;&#x5230;&#x8FD9;&#x4E48;&#x591A;&#x3002;&#x5148;&#x638C;&#x63E1;&#x8FD9;&#x4E9B;&#x5C31;&#x5E94;&#x8BE5;&#x6EE1;&#x8DB3;&#x65E5;&#x5E38;&#x7684;git&#x4F7F;&#x7528;&#x4E86;&#x5427;&#x3002;&#x3002;&#x3002;&#x4EE5;&#x540E;&#x6162;&#x6162;&#x52A0;&#xFF01;</p>
 </span>
       
     </div>
@@ -474,7 +518,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5F00_u59CB"><span class="nav-number">1.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u7B2C_u4E00_u6B65_3A_u8FDB_u884Cgit_u521D_u59CB_u5316_uFF0C_u5728_u6587_u4EF6_u5185_u751F_u6210-git_u6587_u4EF6_u5939"><span class="nav-number">1.0.1.</span> <span class="nav-text">第一步:进行git初始化，在文件内生成.git文件夹</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u7B2C_u4E8C_u6B65_3A_u65B0_u5EFA_u4E00_u4E2A_u6587_u4EF6_uFF0C_u53EF_u4EE5_u76F4_u63A5_u53F3_u952E_u65B0_u5EFA_uFF0C_u4E5F_u53EF_u4EE5_u7528linux_u547D_u4EE4"><span class="nav-number">1.0.2.</span> <span class="nav-text">第二步:新建一个文件，可以直接右键新建，也可以用linux命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u7B2C_u4E09_u6B65_3A"><span class="nav-number">1.0.3.</span> <span class="nav-text">第三步:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u7B2C_u56DB_u6B65_3A_u5C06_u672C_u5730_u5E93push_u5230_u8FDC_u7A0B_u4E3B_u673A"><span class="nav-number">1.0.4.</span> <span class="nav-text">第四步:将本地库push到远程主机</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5220_u9664_u6587_u4EF6"><span class="nav-number">2.</span> <span class="nav-text">删除文件</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
