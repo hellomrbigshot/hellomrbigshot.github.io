@@ -228,6 +228,125 @@
 
     
     
+      
+      
+        
+        
+        
+      
+
+      
+    
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/28/git指令快速入门/" itemprop="url">
+                  git指令快速入门
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-11-28T22:27:25+08:00" content="2016-11-28">
+              2016-11-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/28/git指令快速入门/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/28/git指令快速入门/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>&#x6700;&#x8FD1;&#x5728;&#x516C;&#x53F8;&#x53C2;&#x4E0E;&#x7684;&#x9879;&#x76EE;&#x4ECE;SVN&#x8FC1;&#x79FB;&#x5230;git&#x4E0A;&#x4E86;&#x3002;&#x6BD5;&#x7ADF;&#x5934;&#x53D1;&#x77ED;&#x8BB0;&#x6027;&#x5DEE;&#xFF0C;&#x4EC5;&#x4EE5;&#x6B64;&#x6587;&#x8BB0;&#x5F55;&#x5E38;&#x7528;&#x7684;git&#x6307;&#x4EE4;&#x3002;&#x624B;&#x52A8;&#x6342;&#x8138;&#x54ED;&#x2026;</p>
+<p>git&#x548C;SVN&#x6700;&#x5927;&#x7684;&#x533A;&#x522B;&#x662F;git&#x662F;&#x5206;&#x5E03;&#x5F0F;&#x7684;&#x7248;&#x672C;&#x63A7;&#x5236;&#x5DE5;&#x5177;&#xFF0C;SVN&#x662F;&#x96C6;&#x4E2D;&#x5F0F;&#x7684;&#x3002;git&#x7684;&#x4F7F;&#x7528;&#x8005;&#x6BCF;&#x4E2A;&#x4EBA;&#x90FD;&#x80FD;&#x6709;&#x4E00;&#x4E2A;&#x81EA;&#x5DF1;&#x7684;&#x7248;&#x672C;&#x5E93;&#xFF0C;&#x53EF;&#x4EE5;&#x5148;&#x5C06;&#x81EA;&#x5DF1;&#x7684;&#x6587;&#x4EF6;commit&#x5230;&#x7248;&#x672C;&#x5E93;&#x7136;&#x540E;&#x518D;push&#x5230;&#x5206;&#x652F;&#x4E0A;&#x3002;&#x800C;&#x7248;&#x672C;&#x5E93;&#x4E00;&#x822C;&#x662F;&#x672C;&#x5730;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6CA1;&#x6709;&#x7F51;&#x7EDC;&#x4E5F;&#x53EF;&#x4EE5;&#x5148;commit&#x3002;&#x800C;SVN&#x6BCF;&#x6B21;&#x4E0A;&#x4F20;&#x90FD;&#x8981;&#x4E0A;&#x4F20;&#x5230;&#x7EBF;&#x4E0A;&#x7684;&#x7248;&#x672C;&#x624D;&#x80FD;&#x66FF;&#x6362;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x80FD;&#x4FDD;&#x5B58;&#x3002;&#x4EE5;&#x4E0A;&#x533A;&#x522B;&#x4E0D;&#x4FDD;&#x8BC1;&#x5B8C;&#x5168;&#x6B63;&#x786E;&#xFF0C;&#x6BD5;&#x7ADF;&#x662F;&#x571F;&#x9CD6;&#x5B9E;&#x6218;&#x6D3E;&#xFF0C;&#x4F1A;&#x7528;&#x624D;&#x662F;&#x738B;&#x9053;&#x3002;</p>
+<p>###&#x5F00;&#x59CB;<br>&#x8FDB;&#x5165;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;</p>
+<p>#####&#x7B2C;&#x4E00;&#x6B65;:&#x8FDB;&#x884C;git&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5728;&#x6587;&#x4EF6;&#x5185;&#x751F;&#x6210;.git&#x6587;&#x4EF6;&#x5939;<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> init</span><br></pre></td></tr></table></figure></p>
+<p>#####&#x7B2C;&#x4E8C;&#x6B65;:&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x53F3;&#x952E;&#x65B0;&#x5EFA;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;linux&#x547D;&#x4EE4;<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">git</span> <span class="keyword">add </span>Readme.md</span><br></pre></td></tr></table></figure></p>
+<p>#####&#x7B2C;&#x4E09;&#x6B65;:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="operator"><span class="keyword">commit</span> -<span class="keyword">m</span> <span class="string">&quot;first commit&quot;</span></span><br><span class="line">git remote <span class="keyword">add</span> origin https://github.com/hellomrbigshot/Just_a_test.git</span></span><br></pre></td></tr></table></figure></p>
+<p>&#x8FD9;&#x4E00;&#x6B65;&#x9700;&#x8981;&#x8BE6;&#x7EC6;&#x89E3;&#x91CA;&#x3002;git commit -m &#x201C;xxx&#x201D; &#x7528;&#x6765;&#x5C06;&#x4F60;&#x7684;&#x6587;&#x4EF6;&#x63D0;&#x4EA4;&#x5230;&#x672C;&#x5730;&#x5E93;&#xFF0C;&#x6CE8;&#x610F;&#x662F;&#x672C;&#x5730;&#x5E93;&#xFF01;&#x8FD8;&#x6CA1;&#x6709;&#x4E0A;&#x4F20;&#x5230;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#xFF01;&#xFF01;&#xFF01;</p>
+<p>git remote add &#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x6DFB;&#x52A0;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x3002;&#x8FD9;&#x4E00;&#x53E5;&#x5C06;<a href="https://github.com/hellomrbigshot/Just_a_test.git&#x547D;&#x540D;&#x4E3A;git&#x3002;git" target="_blank" rel="external">https://github.com/hellomrbigshot/Just_a_test.git&#x547D;&#x540D;&#x4E3A;git&#x3002;git</a> remote &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x5217;&#x51FA;&#x6240;&#x6709;&#x7684;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x3002;git remote -v&#x53EF;&#x4EE5;&#x53C2;&#x770B;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x7684;&#x7F51;&#x5740;&#x3002;<br><img src="/2016/11/28/git&#x6307;&#x4EE4;&#x5FEB;&#x901F;&#x5165;&#x95E8;/git_remote.png" alt="&#x56FE;1"></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
 
     
       
@@ -642,109 +761,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/02/21/AngularJS学习笔记之依赖注入/" itemprop="url">
-                  AngularJS学习笔记之依赖注入
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2016-02-21T22:40:50+08:00" content="2016-02-21">
-              2016-02-21
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/02/21/AngularJS学习笔记之依赖注入/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/21/AngularJS学习笔记之依赖注入/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>&#x5B9E;&#x4E60;&#x7684;&#x65F6;&#x5019;&#x7528;AngularJS&#x6BD4;&#x8F83;&#x591A;&#xFF0C;&#x5199;&#x4E00;&#x7BC7;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;&#x7528;&#x6765;&#x8BB0;&#x5F55;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;&#x3002;<br>ng&#x4E2D;&#x7684;&#x201C;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x201D;&#x662F;&#x901A;&#x8FC7;provider&#x548C;injector&#x5B9E;&#x73B0;&#x7684;&#x3002;<br></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/02/21/AngularJS学习笔记之依赖注入/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -791,7 +807,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -805,7 +821,7 @@
 
           <div class="site-state-item site-state-tags">
             
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">标签</span>
               
           </div>

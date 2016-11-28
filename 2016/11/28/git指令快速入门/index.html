@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript,前端," />
+  <meta name="keywords" content="Git," />
 
 
 
@@ -51,16 +51,17 @@
 
 
 
-<meta name="description" content="&amp;#x4E0D;&amp;#x77E5;&amp;#x9053;&amp;#x662F;&amp;#x4E0D;&amp;#x662F;&amp;#x71AC;&amp;#x591C;&amp;#x7684;&amp;#x539F;&amp;#x56E0;&amp;#xFF0C;&amp;#x611F;&amp;#x89C9;&amp;#x8BB0;&amp;#x5FC6;&amp;#x529B;&amp;#x597D;&amp;#x70B9;&amp;#x5DEE;&amp;#xFF0C;&amp;#x539F;&amp;#x672C;&amp;#x7406;&amp;#x89E3;">
+<meta name="description" content="&amp;#x6700;&amp;#x8FD1;&amp;#x5728;&amp;#x516C;&amp;#x53F8;&amp;#x53C2;&amp;#x4E0E;&amp;#x7684;&amp;#x9879;&amp;#x76EE;&amp;#x4ECE;SVN&amp;#x8FC1;&amp;#x79FB;&amp;#x5230;git&amp;#x4E0A;&amp;#x4E86;&amp;#x3002;&amp;#x6BD5;&amp;#x7ADF;&amp;#x5934;&amp;#x53D1;&amp;#x77ED;&amp;#x8BB0;&amp;#x6027;&amp;#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript中this关键字的理解">
-<meta property="og:url" content="http://yoursite.com/2016/01/24/javascript中this关键字的理解/index.html">
+<meta property="og:title" content="git指令快速入门">
+<meta property="og:url" content="http://yoursite.com/2016/11/28/git指令快速入门/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="&amp;#x4E0D;&amp;#x77E5;&amp;#x9053;&amp;#x662F;&amp;#x4E0D;&amp;#x662F;&amp;#x71AC;&amp;#x591C;&amp;#x7684;&amp;#x539F;&amp;#x56E0;&amp;#xFF0C;&amp;#x611F;&amp;#x89C9;&amp;#x8BB0;&amp;#x5FC6;&amp;#x529B;&amp;#x597D;&amp;#x70B9;&amp;#x5DEE;&amp;#xFF0C;&amp;#x539F;&amp;#x672C;&amp;#x7406;&amp;#x89E3;">
-<meta property="og:updated_time" content="2016-05-20T16:19:04.713Z">
+<meta property="og:description" content="&amp;#x6700;&amp;#x8FD1;&amp;#x5728;&amp;#x516C;&amp;#x53F8;&amp;#x53C2;&amp;#x4E0E;&amp;#x7684;&amp;#x9879;&amp;#x76EE;&amp;#x4ECE;SVN&amp;#x8FC1;&amp;#x79FB;&amp;#x5230;git&amp;#x4E0A;&amp;#x4E86;&amp;#x3002;&amp;#x6BD5;&amp;#x7ADF;&amp;#x5934;&amp;#x53D1;&amp;#x77ED;&amp;#x8BB0;&amp;#x6027;&amp;#">
+<meta property="og:image" content="http://yoursite.com/2016/11/28/git指令快速入门/git_remote.png">
+<meta property="og:updated_time" content="2016-11-28T15:01:37.732Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript中this关键字的理解">
-<meta name="twitter:description" content="&amp;#x4E0D;&amp;#x77E5;&amp;#x9053;&amp;#x662F;&amp;#x4E0D;&amp;#x662F;&amp;#x71AC;&amp;#x591C;&amp;#x7684;&amp;#x539F;&amp;#x56E0;&amp;#xFF0C;&amp;#x611F;&amp;#x89C9;&amp;#x8BB0;&amp;#x5FC6;&amp;#x529B;&amp;#x597D;&amp;#x70B9;&amp;#x5DEE;&amp;#xFF0C;&amp;#x539F;&amp;#x672C;&amp;#x7406;&amp;#x89E3;">
+<meta name="twitter:title" content="git指令快速入门">
+<meta name="twitter:description" content="&amp;#x6700;&amp;#x8FD1;&amp;#x5728;&amp;#x516C;&amp;#x53F8;&amp;#x53C2;&amp;#x4E0E;&amp;#x7684;&amp;#x9879;&amp;#x76EE;&amp;#x4ECE;SVN&amp;#x8FC1;&amp;#x79FB;&amp;#x5230;git&amp;#x4E0A;&amp;#x4E86;&amp;#x3002;&amp;#x6BD5;&amp;#x7ADF;&amp;#x5934;&amp;#x53D1;&amp;#x77ED;&amp;#x8BB0;&amp;#x6027;&amp;#">
 
 
 
@@ -72,7 +73,7 @@
   };
 </script>
 
-  <title> javascript中this关键字的理解 | My Blog </title>
+  <title> git指令快速入门 | My Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -243,7 +244,7 @@
             
             
               
-                javascript中this关键字的理解
+                git指令快速入门
               
             
           </h1>
@@ -252,8 +253,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2016-01-24T01:16:31+08:00" content="2016-01-24">
-              2016-01-24
+            <time itemprop="dateCreated" datetime="2016-11-28T22:27:25+08:00" content="2016-11-28">
+              2016-11-28
             </time>
           </span>
 
@@ -278,8 +279,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/24/javascript中this关键字的理解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/24/javascript中this关键字的理解/" itemprop="commentsCount"></span>
+                <a href="/2016/11/28/git指令快速入门/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/28/git指令快速入门/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -298,20 +299,14 @@
       
 
       
-        <span itemprop="articleBody"><p>&#x4E0D;&#x77E5;&#x9053;&#x662F;&#x4E0D;&#x662F;&#x71AC;&#x591C;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x611F;&#x89C9;&#x8BB0;&#x5FC6;&#x529B;&#x597D;&#x70B9;&#x5DEE;&#xFF0C;&#x539F;&#x672C;&#x7406;&#x89E3;&#x7684;&#x4E1C;&#x897F;&#x8981;&#x662F;&#x4E0D;&#x53BB;&#x7FFB;&#x7FFB;&#x8FC7;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5C31;&#x5FD8;&#x4E86;&#x3002;&#x3002;&#x3002;&#x4EE5;&#x540E;&#x6709;&#x65F6;&#x95F4;&#x8FD8;&#x662F;&#x8981;&#x591A;&#x770B;&#x770B;&#x4EE5;&#x524D;&#x7684;&#x535A;&#x5BA2;&#x3002;<br>&#x8FD9;&#x7BC7;&#x535A;&#x5BA2;&#x7528;&#x6765;&#x8BB0;&#x5F55;&#x6211;&#x5BF9;javascript&#x4E2D;this&#x5173;&#x952E;&#x5B57;&#x7684;&#x7406;&#x89E3;&#x3002;&#x4E0B;&#x9762;&#x6B65;&#x5165;&#x6B63;&#x9898;&#x3002;<br><a id="more"></a></p>
-<h2 id="this_u7684_u5E38_u89C4_u7528_u6CD5"><a href="#this_u7684_u5E38_u89C4_u7528_u6CD5" class="headerlink" title="this&#x7684;&#x5E38;&#x89C4;&#x7528;&#x6CD5;"></a>this&#x7684;&#x5E38;&#x89C4;&#x7528;&#x6CD5;</h2><h3 id="u5728_u5BF9_u8C61_u65B9_u6CD5_u4E2D_u4F7F_u7528"><a href="#u5728_u5BF9_u8C61_u65B9_u6CD5_u4E2D_u4F7F_u7528" class="headerlink" title="&#x5728;&#x5BF9;&#x8C61;&#x65B9;&#x6CD5;&#x4E2D;&#x4F7F;&#x7528;"></a>&#x5728;&#x5BF9;&#x8C61;&#x65B9;&#x6CD5;&#x4E2D;&#x4F7F;&#x7528;</h3><p>&#x793A;&#x4F8B;&#xFF1A;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = {};</span><br><span class="line">obj.x = <span class="number">5</span>;</span><br><span class="line">obj.y = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{<span class="built_in">console</span>.log(<span class="keyword">this</span>.x)};   <span class="comment">//5</span></span><br></pre></td></tr></table></figure></p>
-<p>&#x5728;&#x5BF9;&#x8C61;&#x7684;y&#x65B9;&#x6CD5;&#x4E2D;&#x7684;this&#x6240;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x663E;&#x7136;&#x662F;obj&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x4E2A;&#x5E94;&#x8BE5;&#x4E0D;&#x96BE;&#x7406;&#x89E3;&#x3002;</p>
-<h3 id="u5728_u666E_u901A_u51FD_u6570_u4E2D_u5F15_u7528"><a href="#u5728_u666E_u901A_u51FD_u6570_u4E2D_u5F15_u7528" class="headerlink" title="&#x5728;&#x666E;&#x901A;&#x51FD;&#x6570;&#x4E2D;&#x5F15;&#x7528;"></a>&#x5728;&#x666E;&#x901A;&#x51FD;&#x6570;&#x4E2D;&#x5F15;&#x7528;</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun1</span>(<span class="params"></span>)</span>{<span class="built_in">console</span>.log(<span class="keyword">this</span>)};  </span><br><span class="line">fun1();      <span class="comment">//window</span></span><br></pre></td></tr></table></figure>
-<p>&#x5F53;&#x6211;&#x4EEC;&#x5728;&#x666E;&#x901A;&#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528;this&#x65F6;&#xFF0C;&#x5B83;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x662F;window&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x7406;&#x89E3;&#xFF0C;&#x56E0;&#x4E3A;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x90FD;&#x662F;window&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x6240;&#x4EE5;fun1()&#x662F;window&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5373;&#x4E3A;window.fun1()&#x3002;&#x8FD9;&#x6837;&#x5C31;&#x80FD;&#x8BF4;&#x901A;&#x4E86;&#x3002;</p>
-<h3 id="u5728_u6784_u9020_u51FD_u6570_u4E2D_u4F7F_u7528"><a href="#u5728_u6784_u9020_u51FD_u6570_u4E2D_u4F7F_u7528" class="headerlink" title="&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528;"></a>&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528;</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun2</span><span class="params">()</span></span>{<span class="keyword">this</span>.x = <span class="number">5</span>};</span><br><span class="line"><span class="keyword">var</span> fifa = <span class="keyword">new</span> fun2();</span><br><span class="line">fifa.x;    <span class="comment">//5</span></span><br></pre></td></tr></table></figure>
-<p>&#x8BF4;&#x660E;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x7684;this&#x6307;&#x7684;&#x5C31;&#x662F;&#x65B0;&#x6784;&#x9020;&#x51FA;&#x6765;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
-<h2 id="this_u7684_u4E00_u4E9B_u5176_u4ED6_u7528_u6CD5"><a href="#this_u7684_u4E00_u4E9B_u5176_u4ED6_u7528_u6CD5" class="headerlink" title="this&#x7684;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x7528;&#x6CD5;"></a>this&#x7684;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x7528;&#x6CD5;</h2><h3 id="u5728call_28_29_u548Capply_28_29_u4E2D"><a href="#u5728call_28_29_u548Capply_28_29_u4E2D" class="headerlink" title="&#x5728;call()&#x548C;apply()&#x4E2D;"></a>&#x5728;call()&#x548C;apply()&#x4E2D;</h3><p>call()&#x793A;&#x4F8B;<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span></span> fun3(<span class="keyword">type</span>,<span class="keyword">value</span>){</span><br><span class="line">	this.<span class="keyword">type</span> = <span class="keyword">value</span>;</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line">fun3.<span class="keyword">call</span>(city, <span class="built_in">size</span>, <span class="number">5</span>);</span><br></pre></td></tr></table></figure></p>
-<p>&#x8FD9;&#x91CC;&#x7684;call()&#x4E2D;&#x6709;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x8868;&#x793A;fun3&#x88AB;city&#x5BF9;&#x8C61;&#x8C03;&#x7528;&#xFF0C;&#x540E;&#x9762;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x8868;&#x793A;&#x7684;&#x662F;&#x4F20;&#x5165;&#x7684;&#x4E24;&#x4E2A;&#x5F62;&#x53C2;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;fun3&#x4E2D;&#x7684;type&#x548C;value&#x3002;apply()&#x548C;call()&#x7528;&#x6CD5;&#x57FA;&#x672C;&#x4E00;&#x81F4;&#xFF0C;&#x533A;&#x522B;&#x5C31;&#x662F;apply()&#x4E2D;&#x7684;&#x5F62;&#x53C2;&#x8981;&#x653E;&#x5728;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x4E2D;&#x3002;fun3&#x4E2D;&#x7684;this&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x5C31;&#x662F;city&#x3002;</p>
-<h3 id="u4E8B_u4EF6_u76D1_u542C_u4E2D_u7684this"><a href="#u4E8B_u4EF6_u76D1_u542C_u4E2D_u7684this" class="headerlink" title="&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x4E2D;&#x7684;this"></a>&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x4E2D;&#x7684;this</h3><p>&#x8FD9;&#x4E2A;&#x5176;&#x5B9E;&#x4E5F;&#x6BD4;&#x8F83;&#x5E38;&#x7528;&#x3002;<br>&#x793A;&#x4F8B;&#xFF1A;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> doc1 = <span class="built_in">document</span>.getElementById(<span class="string">&apos;doc1&apos;</span>);</span><br><span class="line">doc1.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">	alert(<span class="keyword">this</span>.innerHTML);</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
-<p>&#x8FD9;&#x91CC;&#x7684;this&#x5C31;&#x6307;&#x5411;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x7684;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;doc1&#x3002;</p>
-<h3 id="u51FD_u6570_u5957_u51FD_u6570_u4E2D_u7684this"><a href="#u51FD_u6570_u5957_u51FD_u6570_u4E2D_u7684this" class="headerlink" title="&#x51FD;&#x6570;&#x5957;&#x51FD;&#x6570;&#x4E2D;&#x7684;this"></a>&#x51FD;&#x6570;&#x5957;&#x51FD;&#x6570;&#x4E2D;&#x7684;this</h3><p>&#x8BB0;&#x5F97;&#x4EE5;&#x524D;&#x5199;demo&#x7684;&#x65F6;&#x5019;&#x82B1;&#x4E86;&#x597D;&#x4E45;&#x53BB;&#x67E5;&#x8FD9;&#x4E2A;&#x4E1C;&#x897F;<br>&#x793A;&#x4F8B;&#xFF1A;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = {</span><br><span class="line">	x : <span class="number">100</span>,</span><br><span class="line">	y : <span class="number">200</span>,</span><br><span class="line">	z : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">	setTimeout(</span><br><span class="line">		<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{<span class="built_in">console</span>.log(<span class="keyword">this</span>.x)}, <span class="number">500</span></span><br><span class="line">	)</span><br><span class="line">}</span><br><span class="line">};</span><br><span class="line">obj.z();</span><br></pre></td></tr></table></figure></p>
-<p>&#x8FD9;&#x662F;&#x6211;&#x4EEC;&#x53D1;&#x73B0;obj.z()&#x7684;&#x7ED3;&#x679C;&#x5E76;&#x4E0D;&#x662F;100&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;setTimeout&#x4E2D;&#x51FD;&#x6570;&#x4E2D;&#x7684;this&#x6307;&#x5411;&#x7684;&#x5E76;&#x975E;&#x662F;obj&#xFF0C;&#x800C;&#x662F;&#x5168;&#x5C40;&#x7684;window&#x3002;<br>&#x9047;&#x5230;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;that&#x5BF9;&#x8C61;&#x6765;&#x4FDD;&#x5B58;this&#x3002;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = {</span><br><span class="line">	x : <span class="number">5</span>,</span><br><span class="line">	y : <span class="number">7</span>,</span><br><span class="line">	z : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">		<span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">		setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">			<span class="built_in">console</span>.log(that.x);   <span class="comment">//5</span></span><br><span class="line">			},<span class="number">500</span>)</span><br><span class="line">		}</span><br><span class="line">	}</span><br></pre></td></tr></table></figure></p>
-<p>&#x5927;&#x81F4;&#x5C31;&#x8FD9;&#x4E9B;&#x4E86;&#xFF0C;&#x8981;&#x662F;&#x6709;&#x9057;&#x6F0F;&#x7684;&#x4EE5;&#x540E;&#x518D;&#x8865;&#x5145;&#x3002;</p>
+        <span itemprop="articleBody"><p>&#x6700;&#x8FD1;&#x5728;&#x516C;&#x53F8;&#x53C2;&#x4E0E;&#x7684;&#x9879;&#x76EE;&#x4ECE;SVN&#x8FC1;&#x79FB;&#x5230;git&#x4E0A;&#x4E86;&#x3002;&#x6BD5;&#x7ADF;&#x5934;&#x53D1;&#x77ED;&#x8BB0;&#x6027;&#x5DEE;&#xFF0C;&#x4EC5;&#x4EE5;&#x6B64;&#x6587;&#x8BB0;&#x5F55;&#x5E38;&#x7528;&#x7684;git&#x6307;&#x4EE4;&#x3002;&#x624B;&#x52A8;&#x6342;&#x8138;&#x54ED;&#x2026;</p>
+<p>git&#x548C;SVN&#x6700;&#x5927;&#x7684;&#x533A;&#x522B;&#x662F;git&#x662F;&#x5206;&#x5E03;&#x5F0F;&#x7684;&#x7248;&#x672C;&#x63A7;&#x5236;&#x5DE5;&#x5177;&#xFF0C;SVN&#x662F;&#x96C6;&#x4E2D;&#x5F0F;&#x7684;&#x3002;git&#x7684;&#x4F7F;&#x7528;&#x8005;&#x6BCF;&#x4E2A;&#x4EBA;&#x90FD;&#x80FD;&#x6709;&#x4E00;&#x4E2A;&#x81EA;&#x5DF1;&#x7684;&#x7248;&#x672C;&#x5E93;&#xFF0C;&#x53EF;&#x4EE5;&#x5148;&#x5C06;&#x81EA;&#x5DF1;&#x7684;&#x6587;&#x4EF6;commit&#x5230;&#x7248;&#x672C;&#x5E93;&#x7136;&#x540E;&#x518D;push&#x5230;&#x5206;&#x652F;&#x4E0A;&#x3002;&#x800C;&#x7248;&#x672C;&#x5E93;&#x4E00;&#x822C;&#x662F;&#x672C;&#x5730;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6CA1;&#x6709;&#x7F51;&#x7EDC;&#x4E5F;&#x53EF;&#x4EE5;&#x5148;commit&#x3002;&#x800C;SVN&#x6BCF;&#x6B21;&#x4E0A;&#x4F20;&#x90FD;&#x8981;&#x4E0A;&#x4F20;&#x5230;&#x7EBF;&#x4E0A;&#x7684;&#x7248;&#x672C;&#x624D;&#x80FD;&#x66FF;&#x6362;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x80FD;&#x4FDD;&#x5B58;&#x3002;&#x4EE5;&#x4E0A;&#x533A;&#x522B;&#x4E0D;&#x4FDD;&#x8BC1;&#x5B8C;&#x5168;&#x6B63;&#x786E;&#xFF0C;&#x6BD5;&#x7ADF;&#x662F;&#x571F;&#x9CD6;&#x5B9E;&#x6218;&#x6D3E;&#xFF0C;&#x4F1A;&#x7528;&#x624D;&#x662F;&#x738B;&#x9053;&#x3002;</p>
+<p>###&#x5F00;&#x59CB;<br>&#x8FDB;&#x5165;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;</p>
+<p>#####&#x7B2C;&#x4E00;&#x6B65;:&#x8FDB;&#x884C;git&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5728;&#x6587;&#x4EF6;&#x5185;&#x751F;&#x6210;.git&#x6587;&#x4EF6;&#x5939;<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> init</span><br></pre></td></tr></table></figure></p>
+<p>#####&#x7B2C;&#x4E8C;&#x6B65;:&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x53F3;&#x952E;&#x65B0;&#x5EFA;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;linux&#x547D;&#x4EE4;<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">git</span> <span class="keyword">add </span>Readme.md</span><br></pre></td></tr></table></figure></p>
+<p>#####&#x7B2C;&#x4E09;&#x6B65;:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="operator"><span class="keyword">commit</span> -<span class="keyword">m</span> <span class="string">&quot;first commit&quot;</span></span><br><span class="line">git remote <span class="keyword">add</span> origin https://github.com/hellomrbigshot/Just_a_test.git</span></span><br></pre></td></tr></table></figure></p>
+<p>&#x8FD9;&#x4E00;&#x6B65;&#x9700;&#x8981;&#x8BE6;&#x7EC6;&#x89E3;&#x91CA;&#x3002;git commit -m &#x201C;xxx&#x201D; &#x7528;&#x6765;&#x5C06;&#x4F60;&#x7684;&#x6587;&#x4EF6;&#x63D0;&#x4EA4;&#x5230;&#x672C;&#x5730;&#x5E93;&#xFF0C;&#x6CE8;&#x610F;&#x662F;&#x672C;&#x5730;&#x5E93;&#xFF01;&#x8FD8;&#x6CA1;&#x6709;&#x4E0A;&#x4F20;&#x5230;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#xFF01;&#xFF01;&#xFF01;</p>
+<p>git remote add &#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x6DFB;&#x52A0;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x3002;&#x8FD9;&#x4E00;&#x53E5;&#x5C06;<a href="https://github.com/hellomrbigshot/Just_a_test.git&#x547D;&#x540D;&#x4E3A;git&#x3002;git" target="_blank" rel="external">https://github.com/hellomrbigshot/Just_a_test.git&#x547D;&#x540D;&#x4E3A;git&#x3002;git</a> remote &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x5217;&#x51FA;&#x6240;&#x6709;&#x7684;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x3002;git remote -v&#x53EF;&#x4EE5;&#x53C2;&#x770B;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x7684;&#x7F51;&#x5740;&#x3002;<br><img src="/2016/11/28/git&#x6307;&#x4EE4;&#x5FEB;&#x901F;&#x5165;&#x95E8;/git_remote.png" alt="&#x56FE;1"></p>
 </span>
       
     </div>
@@ -320,9 +315,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag">#javascript</a>
-          
-            <a href="/tags/前端/" rel="tag">#前端</a>
+            <a href="/tags/Git/" rel="tag">#Git</a>
           
         </div>
       
@@ -331,17 +324,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/16/Markdown一些基本语法/" rel="next" title="Markdown一些基本语法">
-                <i class="fa fa-chevron-left"></i> Markdown一些基本语法
+              <a href="/2016/05/20/毕设完成后的一些想法/" rel="next" title="毕设完成后的一些想法">
+                <i class="fa fa-chevron-left"></i> 毕设完成后的一些想法
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/21/AngularJS学习笔记之依赖注入/" rel="prev" title="AngularJS学习笔记之依赖注入">
-                AngularJS学习笔记之依赖注入 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -368,8 +357,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/24/javascript中this关键字的理解/"
-           data-title="javascript中this关键字的理解" data-url="http://yoursite.com/2016/01/24/javascript中this关键字的理解/">
+      <div class="ds-thread" data-thread-key="2016/11/28/git指令快速入门/"
+           data-title="git指令快速入门" data-url="http://yoursite.com/2016/11/28/git指令快速入门/">
       </div>
     
   </div>
@@ -485,7 +474,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#this_u7684_u5E38_u89C4_u7528_u6CD5"><span class="nav-number">1.</span> <span class="nav-text">this的常规用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5728_u5BF9_u8C61_u65B9_u6CD5_u4E2D_u4F7F_u7528"><span class="nav-number">1.1.</span> <span class="nav-text">在对象方法中使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5728_u666E_u901A_u51FD_u6570_u4E2D_u5F15_u7528"><span class="nav-number">1.2.</span> <span class="nav-text">在普通函数中引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5728_u6784_u9020_u51FD_u6570_u4E2D_u4F7F_u7528"><span class="nav-number">1.3.</span> <span class="nav-text">在构造函数中使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this_u7684_u4E00_u4E9B_u5176_u4ED6_u7528_u6CD5"><span class="nav-number">2.</span> <span class="nav-text">this的一些其他用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5728call_28_29_u548Capply_28_29_u4E2D"><span class="nav-number">2.1.</span> <span class="nav-text">在call()和apply()中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4E8B_u4EF6_u76D1_u542C_u4E2D_u7684this"><span class="nav-number">2.2.</span> <span class="nav-text">事件监听中的this</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u51FD_u6570_u5957_u51FD_u6570_u4E2D_u7684this"><span class="nav-number">2.3.</span> <span class="nav-text">函数套函数中的this</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
