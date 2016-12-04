@@ -60,7 +60,7 @@
 <meta property="og:image" content="http://yoursite.com/2016/11/28/git指令快速入门/git_remote.png">
 <meta property="og:image" content="http://yoursite.com/2016/11/28/git指令快速入门/git_status.png">
 <meta property="og:image" content="http://yoursite.com/2016/11/28/git指令快速入门/git_add.png">
-<meta property="og:updated_time" content="2016-11-28T15:55:59.183Z">
+<meta property="og:updated_time" content="2016-12-04T15:29:35.605Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git指令快速入门">
 <meta name="twitter:description" content="&amp;#x6700;&amp;#x8FD1;&amp;#x5728;&amp;#x516C;&amp;#x53F8;&amp;#x53C2;&amp;#x4E0E;&amp;#x7684;&amp;#x9879;&amp;#x76EE;&amp;#x4ECE;SVN&amp;#x8FC1;&amp;#x79FB;&amp;#x5230;git&amp;#x4E0A;&amp;#x4E86;&amp;#x3002;&amp;#x6BD5;&amp;#x7ADF;&amp;#x5934;&amp;#x53D1;&amp;#x77ED;&amp;#x8BB0;&amp;#x6027;&amp;#">
@@ -351,7 +351,18 @@ git reset --hard &#x7248;&#x672C;&#x5E93;ID
 <pre><code>git rm Readme.md
 </code></pre><p>&#x4E4B;&#x540E;&#x63D0;&#x4EA4;&#x5230;&#x672C;&#x5730;&#x5E93;&#xFF0C;&#x6700;&#x540E;push&#x5230;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x5373;&#x53EF;&#x3002;</p>
 <p>&#x6682;&#x65F6;&#x5C31;&#x60F3;&#x5230;&#x8FD9;&#x4E48;&#x591A;&#x3002;&#x5148;&#x638C;&#x63E1;&#x8FD9;&#x4E9B;&#x5C31;&#x5E94;&#x8BE5;&#x6EE1;&#x8DB3;&#x65E5;&#x5E38;&#x7684;git&#x4F7F;&#x7528;&#x4E86;&#x5427;&#x3002;&#x3002;&#x3002;&#x4EE5;&#x540E;&#x6162;&#x6162;&#x52A0;&#xFF01;</p>
-</span>
+<p>&#x66F4;&#x65B0;&#xFF1A;&#x65B0;&#x5EFA;&#x5206;&#x652F;&#x548C;&#x5408;&#x5E76;&#x5206;&#x652F;</p>
+<h3 id="u65B0_u5EFA_u5206_u652F"><a href="#u65B0_u5EFA_u5206_u652F" class="headerlink" title="&#x65B0;&#x5EFA;&#x5206;&#x652F;"></a>&#x65B0;&#x5EFA;&#x5206;&#x652F;</h3><pre><code>git branch dev
+</code></pre><h4 id="u5207_u6362_u5206_u652F"><a href="#u5207_u6362_u5206_u652F" class="headerlink" title="&#x5207;&#x6362;&#x5206;&#x652F;"></a>&#x5207;&#x6362;&#x5206;&#x652F;</h4><pre><code>git checkout dev
+</code></pre><h4 id="u5408_u5E76_u5206_u652F"><a href="#u5408_u5E76_u5206_u652F" class="headerlink" title="&#x5408;&#x5E76;&#x5206;&#x652F;"></a>&#x5408;&#x5E76;&#x5206;&#x652F;</h4><pre><code>git merge master
+</code></pre><p>&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x662F;&#x5C06;master&#x5408;&#x5E76;&#x5230;dev&#xFF0C;&#x4FDD;&#x8BC1;dev&#x4E0A;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x6700;&#x65B0;&#x7684;&#xFF0C;&#x4E4B;&#x540E;&#x5207;&#x6362;&#x5230;master</p>
+<pre><code>git remote master
+git merge dev
+</code></pre><p>&#x5C06;dev&#x5408;&#x5E76;&#x5230;master&#xFF0C;&#x8FD9;&#x6837;dev&#x4E0A;&#x7684;&#x66F4;&#x65B0;&#x5C31;&#x5408;&#x5E76;&#x5230;&#x4E86;master&#x4E0A;&#x3002;<br>&#x6700;&#x540E;push&#x4E00;&#x4E0B;</p>
+<pre><code>git    push -u origin master
+</code></pre><p>&#x8FD9;&#x6837;&#x5206;&#x652F;&#x4E0A;&#x7684;&#x66F4;&#x65B0;&#x5C31;&#x4E0A;&#x4F20;&#x5230;&#x670D;&#x52A1;&#x5668;&#x7684;master&#x4E0A;&#x4E86;&#x3002;<br>&#x5982;&#x679C;&#x8981;&#x5220;&#x9664;&#x5206;&#x652F;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;</p>
+<pre><code>git branch -d dev
+</code></pre></span>
       
     </div>
 
@@ -518,7 +529,7 @@ git reset --hard &#x7248;&#x672C;&#x5E93;ID
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5F00_u59CB"><span class="nav-number">1.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u7B2C_u4E00_u6B65_3A_u8FDB_u884Cgit_u521D_u59CB_u5316_uFF0C_u5728_u6587_u4EF6_u5185_u751F_u6210-git_u6587_u4EF6_u5939"><span class="nav-number">1.0.1.</span> <span class="nav-text">第一步:进行git初始化，在文件内生成.git文件夹</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u7B2C_u4E8C_u6B65_3A_u65B0_u5EFA_u4E00_u4E2A_u6587_u4EF6_uFF0C_u53EF_u4EE5_u76F4_u63A5_u53F3_u952E_u65B0_u5EFA_uFF0C_u4E5F_u53EF_u4EE5_u7528linux_u547D_u4EE4"><span class="nav-number">1.0.2.</span> <span class="nav-text">第二步:新建一个文件，可以直接右键新建，也可以用linux命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u7B2C_u4E09_u6B65_3A"><span class="nav-number">1.0.3.</span> <span class="nav-text">第三步:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u7B2C_u56DB_u6B65_3A_u5C06_u672C_u5730_u5E93push_u5230_u8FDC_u7A0B_u4E3B_u673A"><span class="nav-number">1.0.4.</span> <span class="nav-text">第四步:将本地库push到远程主机</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5220_u9664_u6587_u4EF6"><span class="nav-number">2.</span> <span class="nav-text">删除文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5F00_u59CB"><span class="nav-number">1.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u7B2C_u4E00_u6B65_3A_u8FDB_u884Cgit_u521D_u59CB_u5316_uFF0C_u5728_u6587_u4EF6_u5185_u751F_u6210-git_u6587_u4EF6_u5939"><span class="nav-number">1.0.1.</span> <span class="nav-text">第一步:进行git初始化，在文件内生成.git文件夹</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u7B2C_u4E8C_u6B65_3A_u65B0_u5EFA_u4E00_u4E2A_u6587_u4EF6_uFF0C_u53EF_u4EE5_u76F4_u63A5_u53F3_u952E_u65B0_u5EFA_uFF0C_u4E5F_u53EF_u4EE5_u7528linux_u547D_u4EE4"><span class="nav-number">1.0.2.</span> <span class="nav-text">第二步:新建一个文件，可以直接右键新建，也可以用linux命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u7B2C_u4E09_u6B65_3A"><span class="nav-number">1.0.3.</span> <span class="nav-text">第三步:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u7B2C_u56DB_u6B65_3A_u5C06_u672C_u5730_u5E93push_u5230_u8FDC_u7A0B_u4E3B_u673A"><span class="nav-number">1.0.4.</span> <span class="nav-text">第四步:将本地库push到远程主机</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5220_u9664_u6587_u4EF6"><span class="nav-number">2.</span> <span class="nav-text">删除文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u65B0_u5EFA_u5206_u652F"><span class="nav-number">3.</span> <span class="nav-text">新建分支</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u5207_u6362_u5206_u652F"><span class="nav-number">3.1.</span> <span class="nav-text">切换分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5408_u5E76_u5206_u652F"><span class="nav-number">3.2.</span> <span class="nav-text">合并分支</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
